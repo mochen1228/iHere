@@ -7,5 +7,6 @@ target 'SignMeIn' do
 
   # Pods for SignMeIn
   pod 'Parse'
+  pod 'Alamofire'
 
 end

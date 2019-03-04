@@ -24,44 +24,31 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func onNextButton(_ sender: Any) {
         print("status choice", self.statusChoice)
-
+        var usernameLegal = true
+        var passwordLegal = true
         // check password illegal
         if !checkPasswordLegal(with: passwordTextField.text!) {
             // Display error texts if user put down a illegal password
             illegalPasswordTextField.text = "Passward must be length 8+ and contain only lowercase letters and numbers"
-            return
+            passwordLegal = false
         } else {
             // In case users corrected their password, remove the error texts
             illegalPasswordTextField.text = ""
         }
         
         // Check email illegal
-        if !checkEmailLegal(with: usernameTextField.text!) {
+        if !checkUsernameLegal(with: usernameTextField.text!) {
+            print("illegal")
             illegalUsernameTextField.text = "Username already exits"
-            return
+            usernameLegal = false
         } else {
             illegalUsernameTextField.text = ""
-            self.performSegue(withIdentifier: "credentialsSuccessSegue", sender: self)
-            // Creating the User object
-//            var user = PFUser()
-//            user.username = usernameTextField.text!
-//            user.password = passwordTextField.text!
-//            user["status"] = statusChoice
-//            user["firstname"] = "Chen"
-//            user["lastname"] = "Mo"
-//            user["classes"] = []
-//
-//            user.signUpInBackground { (success, error) in
-//                if success {
-////                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
-//                    print("success")
-//                } else {
-//                    print("cannot sign up")
-//                }
-//            }
-            
         }
-        print("button action finished")
+        if usernameLegal == false || passwordLegal == false {
+            return
+        } else {
+            self.performSegue(withIdentifier: "credentialsSuccessSegue", sender: self)
+        }
     }
     
     override func viewDidLoad() {
@@ -81,8 +68,16 @@ class SignUpViewController: UIViewController {
         return password.count > 7
     }
     
-    func checkEmailLegal(with email: String) -> Bool {
-        return true
+    func checkUsernameLegal(with email: String) -> Bool {
+        if email.count < 8 {
+            return false
+        }
+        // For querying users, use "_User"
+        let query = PFQuery(className: "_User")
+        query.whereKey("username", equalTo:usernameTextField.text!)
+        var legal = true
+        let count = try! query.findObjects().count
+        return count == 0
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

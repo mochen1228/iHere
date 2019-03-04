@@ -7,7 +7,7 @@
 //
 // *************************
 // To launch parse dashboard:
-// parse-dashboard --appId myAppId --masterKey myMasterKey - serverURL "https://check-me-in-007.herokuapp.com/parse"
+// parse-dashboard --appId myAppId --masterKey myMasterKey --serverURL "https://check-me-in-007.herokuapp.com/parse"
 
 import UIKit
 
