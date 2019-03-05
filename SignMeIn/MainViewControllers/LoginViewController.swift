@@ -20,8 +20,41 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    // Label under password textfield that displays errors messages to users
+    @IBOutlet weak var errorLabel: UILabel!
+    
     @IBAction func onLoginButton(_ sender: Any) {
         // Do login actions
+        let username = usernameTextField.text!
+        let password = passwordTextField.text!
+        
+        PFUser.logInWithUsername(inBackground: username, password:password) { (user, error) in
+            if user != nil {
+                // Perform the segue that matches the user's status
+                // Student will perform studentLoginSegue and be lead to
+                //      student home screen
+                // Instructor will perform instructorLoginSegue and be lead
+                //      to instructor home screen
+                let status = user!["status"] as! String
+                if status == "Student" {
+                    self.performSegue(withIdentifier: "studentLoginSegue", sender: nil)
+                } else {
+                    self.performSegue(withIdentifier: "instructorLoginSegue", sender: nil)
+                }
+            } else {
+                // Handling errors
+                // If Parse could not find any matching usernames or password
+                if error?.localizedDescription as! String == "Invalid username/password."{
+                    print("invalid username/password")
+                    self.errorLabel.text? = "Invalid username/password"
+                } else {
+                    // If the connection takes too long
+                    // Usually caused by no internet connection or inresponsive server
+                    self.errorLabel.text? = "Server not responding or no internet connection"
+                    print("server/connection error")
+                }
+            }
+        }
     }
     /*
     // MARK: - Navigation

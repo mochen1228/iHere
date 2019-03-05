@@ -42,8 +42,8 @@
                                     <segue destination="NpX-9U-Jla" kind="show" id="nxP-Qf-YnS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="XXXXXXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-EK-7vn">
-                                <rect key="frame" x="81" y="188" width="213" height="67"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I'm Fucking Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-EK-7vn">
+                                <rect key="frame" x="45" y="193" width="285" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
@@ -68,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RJm-HT-eyF">
-                                <rect key="frame" x="37" y="191" width="301" height="30"/>
+                                <rect key="frame" x="37" y="168" width="301" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -82,7 +82,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92G-ij-cyT">
-                                <rect key="frame" x="107" y="339" width="160" height="30"/>
+                                <rect key="frame" x="107" y="362" width="160" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Log In">
@@ -92,6 +92,13 @@
                                     <action selector="onLoginButton:" destination="fIW-01-AtZ" eventType="touchUpInside" id="Fa1-hu-e2I"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHX-Z4-QG7">
+                                <rect key="frame" x="37" y="298" width="301" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="1" green="0.028078071959999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xzb-xe-xJf"/>
@@ -100,21 +107,32 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="S4m-Pn-vhe"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="errorLabel" destination="qHX-Z4-QG7" id="yHR-Pe-C80"/>
                         <outlet property="passwordTextField" destination="da3-9G-g5G" id="vDF-Tk-Isl"/>
                         <outlet property="usernameTextField" destination="RJm-HT-eyF" id="4Vt-Uv-ruf"/>
+                        <segue destination="xmZ-5c-uDh" kind="presentation" identifier="studentLoginSegue" id="yVy-FJ-fxZ"/>
+                        <segue destination="qbv-RR-3QD" kind="presentation" identifier="instructorLoginSegue" id="XAJ-r5-4BK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O9P-f2-1hq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2120.8000000000002" y="-289.65517241379314"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--StudentHomeTabBarController-->
         <scene sceneID="uIq-gv-6ub">
             <objects>
-                <viewControllerPlaceholder id="xmZ-5c-uDh" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="StudentHome" referencedIdentifier="StudentHomeTabBarController" id="xmZ-5c-uDh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t5F-0k-afB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2676" y="-327"/>
+            <point key="canvasLocation" x="4413" y="-267"/>
+        </scene>
+        <!--InstructorHomeTabBarController-->
+        <scene sceneID="68S-sp-SK3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InstructorHome" referencedIdentifier="InstructorHomeTabBarController" id="qbv-RR-3QD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OQ4-2A-aXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4422" y="-184"/>
         </scene>
         <!--Choose Status View Controller-->
         <scene sceneID="k0W-KW-zUG">
@@ -285,6 +303,8 @@
                     <connections>
                         <outlet property="firstnameTextField" destination="76I-PF-I9Q" id="RTe-IN-IFd"/>
                         <outlet property="lastnameTextField" destination="emg-6J-D1M" id="WOm-iF-rbD"/>
+                        <segue destination="xmZ-5c-uDh" kind="presentation" identifier="studentSignupSegue" id="Ir5-uJ-ob0"/>
+                        <segue destination="qbv-RR-3QD" kind="presentation" identifier="instructorSignupSegue" id="CYu-RO-z4h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMm-Uz-IHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -294,7 +314,7 @@
         <!--Navigation Controller-->
         <scene sceneID="cIj-bO-3uA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uFs-nH-NWh" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="initialViewController" automaticallyAdjustsScrollViewInsets="NO" id="uFs-nH-NWh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PVw-vV-IDG">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -310,4 +330,8 @@
             <point key="canvasLocation" x="567" y="23"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="CYu-RO-z4h"/>
+        <segue reference="Ir5-uJ-ob0"/>
+    </inferredMetricsTieBreakers>
 </document>

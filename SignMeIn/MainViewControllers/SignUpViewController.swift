@@ -23,6 +23,11 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func onNextButton(_ sender: Any) {
+        // Check if the credentials are legal, and move on to the "finishing up"
+        //      controller
+        // ATTENTION:
+        // This button action will only pass the credentials to the segue, it
+        //      will NOT create a user yet
         print("status choice", self.statusChoice)
         var usernameLegal = true
         var passwordLegal = true
@@ -69,18 +74,31 @@ class SignUpViewController: UIViewController {
     }
     
     func checkUsernameLegal(with email: String) -> Bool {
-        if email.count < 8 {
-            return false
-        }
-        // For querying users, use "_User"
+        // TODO:
+        // Implement the feature that allows the error textfield to display
+        //      which type of illegal is the username/password
+        
+        // if email.count < 8 {
+            // return false
+        // }
+        
+        // For querying users, use "_User", or it won't work
         let query = PFQuery(className: "_User")
         query.whereKey("username", equalTo:usernameTextField.text!)
         var legal = true
+        
+        // CAUSION:
+        // This code will throw error when the user database has NO users at all
+        // Currently working on solutions, but having at least 1 user in the
+        //      database will hide this problem temporarily
+        // TODO: Make the query work when querying an empty database
         let count = try! query.findObjects().count
         return count == 0
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Pass on the credentials to the "finishing up" screen
+        // For now, a new users has NOT been created yet
         if segue.identifier == "credentialsSuccessSegue" {
             let userdata = ["username": usernameTextField.text!,
                             "password": passwordTextField.text!,

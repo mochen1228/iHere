@@ -21,12 +21,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // Initializing Heroku Parse server
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
                 configuration.applicationId = "myAppId"
                 configuration.server = "https://check-me-in-007.herokuapp.com/parse"
             })
         )
+        
+        // Skip login flow if user is logged in
+        let currentUser = PFUser.current()
+        if currentUser != nil {
+            // userGroup refers to the user status
+            // Either Student or Instructor
+            // It will take the user to the storyboard they belong
+            let userGroup = currentUser!["status"]!
+            print(userGroup)
+            let studentHome = UIStoryboard(name: "StudentHome", bundle: nil)
+            let studentHomeTabBarController = studentHome.instantiateViewController(withIdentifier: "StudentHomeTabBarController")
+            window?.rootViewController = studentHomeTabBarController
+        }
         return true
     }
 

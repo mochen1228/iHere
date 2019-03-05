@@ -17,7 +17,10 @@
 		A8CF849E222604E600F3094F /* ChooseStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CF849D222604E600F3094F /* ChooseStatusViewController.swift */; };
 		A8CF84A0222604FE00F3094F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CF849F222604FE00F3094F /* SignUpViewController.swift */; };
 		A8CF84A222263EE700F3094F /* FinishingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CF84A122263EE700F3094F /* FinishingUpViewController.swift */; };
-		A8CF84A422294BA700F3094F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8CF84A322294BA700F3094F /* Home.storyboard */; };
+		A8CF84A422294BA700F3094F /* StudentHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8CF84A322294BA700F3094F /* StudentHome.storyboard */; };
+		A8ECF2D8222EF759004F9380 /* InstructorHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8ECF2D7222EF759004F9380 /* InstructorHome.storyboard */; };
+		A8ECF2DE222EFC6F004F9380 /* StudentClassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECF2DD222EFC6F004F9380 /* StudentClassesTableViewController.swift */; };
+		A8ECF2E1222F2417004F9380 /* InstructorClassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECF2E0222F2417004F9380 /* InstructorClassesTableViewController.swift */; };
 		EEC0F746FEA41462E6BDE98F /* Pods_SignMeIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88E0D9B4038BC7513168947 /* Pods_SignMeIn.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +38,10 @@
 		A8CF849D222604E600F3094F /* ChooseStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseStatusViewController.swift; sourceTree = "<group>"; };
 		A8CF849F222604FE00F3094F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A8CF84A122263EE700F3094F /* FinishingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishingUpViewController.swift; sourceTree = "<group>"; };
-		A8CF84A322294BA700F3094F /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		A8CF84A322294BA700F3094F /* StudentHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentHome.storyboard; sourceTree = "<group>"; };
+		A8ECF2D7222EF759004F9380 /* InstructorHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InstructorHome.storyboard; sourceTree = "<group>"; };
+		A8ECF2DD222EFC6F004F9380 /* StudentClassesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClassesTableViewController.swift; sourceTree = "<group>"; };
+		A8ECF2E0222F2417004F9380 /* InstructorClassesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorClassesTableViewController.swift; sourceTree = "<group>"; };
 		C97A8DC6692D92A73869E88C /* Pods-SignMeIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignMeIn.debug.xcconfig"; path = "Target Support Files/Pods-SignMeIn/Pods-SignMeIn.debug.xcconfig"; sourceTree = "<group>"; };
 		E88E0D9B4038BC7513168947 /* Pods_SignMeIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignMeIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,6 +88,8 @@
 		A86A856D2225F34700C4383A /* SignMeIn */ = {
 			isa = PBXGroup;
 			children = (
+				A8ECF2DF222F2357004F9380 /* InstructorViewControllers */,
+				A8ECF2DC222EFC52004F9380 /* StudentViewControllers */,
 				A8CF849A2225F55200F3094F /* MainViewControllers */,
 				A86A856E2225F34700C4383A /* AppDelegate.swift */,
 				A8CF84972225F51F00F3094F /* Storyboards */,
@@ -96,7 +104,8 @@
 		A8CF84972225F51F00F3094F /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				A8CF84A322294BA700F3094F /* Home.storyboard */,
+				A8CF84A322294BA700F3094F /* StudentHome.storyboard */,
+				A8ECF2D7222EF759004F9380 /* InstructorHome.storyboard */,
 				A86A85722225F34700C4383A /* Main.storyboard */,
 			);
 			path = Storyboards;
@@ -112,6 +121,22 @@
 				A8CF84982225F54C00F3094F /* LoginViewController.swift */,
 			);
 			path = MainViewControllers;
+			sourceTree = "<group>";
+		};
+		A8ECF2DC222EFC52004F9380 /* StudentViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A8ECF2DD222EFC6F004F9380 /* StudentClassesTableViewController.swift */,
+			);
+			path = StudentViewControllers;
+			sourceTree = "<group>";
+		};
+		A8ECF2DF222F2357004F9380 /* InstructorViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A8ECF2E0222F2417004F9380 /* InstructorClassesTableViewController.swift */,
+			);
+			path = InstructorViewControllers;
 			sourceTree = "<group>";
 		};
 		B17E58494000F1AC65A42732 /* Frameworks */ = {
@@ -185,7 +210,8 @@
 				A86A857C2225F34800C4383A /* LaunchScreen.storyboard in Resources */,
 				A86A85792225F34800C4383A /* Assets.xcassets in Resources */,
 				A86A85742225F34700C4383A /* Main.storyboard in Resources */,
-				A8CF84A422294BA700F3094F /* Home.storyboard in Resources */,
+				A8CF84A422294BA700F3094F /* StudentHome.storyboard in Resources */,
+				A8ECF2D8222EF759004F9380 /* InstructorHome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +278,9 @@
 				A8CF849C2225F5CA00F3094F /* WelcomeViewController.swift in Sources */,
 				A8CF84A222263EE700F3094F /* FinishingUpViewController.swift in Sources */,
 				A86A856F2225F34700C4383A /* AppDelegate.swift in Sources */,
+				A8ECF2E1222F2417004F9380 /* InstructorClassesTableViewController.swift in Sources */,
 				A86A85772225F34700C4383A /* SignMeIn.xcdatamodeld in Sources */,
+				A8ECF2DE222EFC6F004F9380 /* StudentClassesTableViewController.swift in Sources */,
 				A8CF849E222604E600F3094F /* ChooseStatusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

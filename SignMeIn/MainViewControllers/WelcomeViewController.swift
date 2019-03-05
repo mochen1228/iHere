@@ -19,9 +19,11 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func onLoginButton(_ sender: Any) {
+        // Placeholder, segue currently performed directly by SB
     }
     
     @IBAction func onSignupButton(_ sender: Any) {
+        // Placeholder, segue currently performed directly by SB
     }
     /*
     // MARK: - Navigation
