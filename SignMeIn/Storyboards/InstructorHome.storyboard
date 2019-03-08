@@ -82,7 +82,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Pick Location"/>
                                 <connections>
-                                    <segue destination="FJD-AA-xzi" kind="show" id="t7b-0w-a58"/>
+                                    <action selector="onPickLocationButton:" destination="3iI-Dt-oJ1" eventType="touchUpInside" id="rSw-9i-hhU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -92,6 +92,9 @@
                     <navigationItem key="navigationItem" title="Title" id="f9N-SR-gmq">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="prB-2X-xQp"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="FJD-AA-xzi" kind="show" identifier="showMapSegue" id="jWB-BD-ZQs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="soB-kp-Gag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,23 +111,30 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IcT-2a-CNW">
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPo-y0-VJe">
+                                <rect key="frame" x="102" y="639" width="170" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Comfirm Location">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onConfirmLocationButton:" destination="FJD-AA-xzi" eventType="touchUpInside" id="CIt-Iv-0kH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="wPo-y0-VJe" firstAttribute="leading" secondItem="h27-se-4zc" secondAttribute="leading" constant="102" id="7Wt-35-yIE"/>
+                            <constraint firstItem="h27-se-4zc" firstAttribute="trailing" secondItem="wPo-y0-VJe" secondAttribute="trailing" constant="103" id="EtF-KN-KpM"/>
                             <constraint firstItem="IcT-2a-CNW" firstAttribute="top" secondItem="h27-se-4zc" secondAttribute="top" id="FsU-Uh-JjC"/>
                             <constraint firstItem="IcT-2a-CNW" firstAttribute="leading" secondItem="h27-se-4zc" secondAttribute="leading" id="MMn-Pl-kvw"/>
                             <constraint firstItem="IcT-2a-CNW" firstAttribute="trailing" secondItem="h27-se-4zc" secondAttribute="trailing" id="ZNX-gb-vny"/>
+                            <constraint firstItem="h27-se-4zc" firstAttribute="bottom" secondItem="wPo-y0-VJe" secondAttribute="bottom" constant="60" id="cme-Lt-8tE"/>
                             <constraint firstItem="IcT-2a-CNW" firstAttribute="bottom" secondItem="h27-se-4zc" secondAttribute="bottom" id="nPc-cx-U7r"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h27-se-4zc"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lkL-UR-Y1F">
-                        <barButtonItem key="rightBarButtonItem" title="Confirm" id="S13-1W-Gc8">
-                            <connections>
-                                <action selector="onConfirmButton:" destination="FJD-AA-xzi" id="s6z-ui-vFD"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="lkL-UR-Y1F"/>
                     <connections>
                         <outlet property="mapView" destination="IcT-2a-CNW" id="M95-W2-FSZ"/>
                     </connections>

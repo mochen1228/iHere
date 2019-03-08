@@ -5,29 +5,48 @@
 //  Created by ChenMo on 3/5/19.
 //  Copyright © 2019 ChenMo. All rights reserved.
 //
+// References for MapKit:
 // https://www.thorntech.com/2016/01/how-to-search-for-location-using-apples-mapkit/
 //
 
 import UIKit
 import MapKit
 
-class AddLocationViewController: UIViewController {
+protocol AddLocationViewControllerDelegate {
+    // Protocal for passing selected location to InstructorAddClassVC
+    func finishPassing(location: MKPlacemark)
+}
+
+class AddLocationViewController: UIViewController, LocationSearchTableDelegate {
     
+    func passSelectedLocation(location: MKPlacemark) {
+        // Set of statements to run when received data from the search table
+        // print("Placemark received:")
+        // print(location)
+        self.selectedLocation = location
+
+        // Fill out the search bar text with the name of the selected location
+        self.resultSearchController?.searchBar.text = location.name
+    }
+    
+    var delegate: AddLocationViewControllerDelegate?
+    
+    // This view is shared with the search table
     @IBOutlet weak var mapView: MKMapView!
+    
+    // The location that the user selected from the search table
+    //      (tapped cell of the table VC)
     var selectedLocation: MKPlacemark? = nil
     
     let locationManager = CLLocationManager()
     
     var resultSearchController:UISearchController? = nil
 
-
-//    let initialLocation = CLLocation(latitude: 33.645936,
-//                                     longitude: -117.842728)
-//    let regionRadius: CLLocationDistance = 1000
-    
-    
-    @IBAction func onConfirmButton(_ sender: Any) {
-        
+    @IBAction func onConfirmLocationButton(_ sender: Any) {
+        // Dismiss this VC and go back to the previous InstructorAddClassVC
+        // Pass a selected placemark as location data to IACVC
+        delegate?.finishPassing(location: selectedLocation!)
+        navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,14 +66,16 @@ class AddLocationViewController: UIViewController {
         // Setting up the search controller
         let storyboard = UIStoryboard(name: "InstructorHome", bundle: nil)
         let locationSearchTable = storyboard.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
+        
+        // Setting delegate to receive data from search table
+        locationSearchTable.delegate = self
+        
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController?.searchResultsUpdater = locationSearchTable
         
         // Set up these values with the search table
         locationSearchTable.mapView = mapView
-        locationSearchTable.selectedLocation = selectedLocation
-        locationSearchTable.searchController = resultSearchController
-        
+
         // Setting up the search bar for the search controller
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
@@ -66,16 +87,6 @@ class AddLocationViewController: UIViewController {
         resultSearchController?.dimsBackgroundDuringPresentation = true
         definesPresentationContext = true
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -103,3 +114,13 @@ extension AddLocationViewController : CLLocationManagerDelegate {
         }
     }
 }
+
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ }
+ */

@@ -9,13 +9,19 @@
 import UIKit
 import MapKit
 
+protocol LocationSearchTableDelegate {
+    // Protocal for passing selected location to AddLocationViewController
+    func passSelectedLocation(location: MKPlacemark)
+}
 
 class LocationSearchTable : UITableViewController {
+    var delegate: LocationSearchTableDelegate?
+    
     var matchingItems:[MKMapItem] = []
     var mapView: MKMapView? = nil
-    var selectedLocation: MKPlacemark? = nil
+    // var selectedLocation: MKPlacemark? = nil
     var pin = MKPointAnnotation()
-    var searchController: UISearchController? = nil
+    // var searchController: UISearchController? = nil
 
     
     func parseAddress(selectedItem:MKPlacemark) -> String {
@@ -90,7 +96,6 @@ extension LocationSearchTable {
         
         // To center the map to the search result that is selected
         let selectedPlacemark = matchingItems[indexPath.row].placemark
-        selectedLocation = selectedPlacemark
         
         var region = MKCoordinateRegion()
         region.center = selectedPlacemark.coordinate
@@ -103,10 +108,13 @@ extension LocationSearchTable {
         //      as the subtitle
         mapView?.removeAnnotation(pin)
         pin.title = selectedPlacemark.name
-        searchController?.searchBar.text = selectedPlacemark.name
+        // searchController?.searchBar.text = selectedPlacemark.name
         pin.subtitle = parseAddress(selectedItem: selectedPlacemark)
         pin.coordinate = region.center
         mapView?.addAnnotation(pin)
+        
+        // Pass placemark back to addLocationVC
+        delegate?.passSelectedLocation(location: selectedPlacemark)
         
         // Dismiss the search tableview controller and bring back the map
         self.dismiss(animated: true, completion: nil)
