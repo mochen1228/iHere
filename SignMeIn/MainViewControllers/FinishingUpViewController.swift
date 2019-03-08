@@ -36,7 +36,7 @@ class FinishingUpViewController: UIViewController {
         user["status"] = userdata["status"]
         user["firstname"] = firstnameTextField.text!
         user["lastname"] = lastnameTextField.text!
-        user["classes"] = []
+        user["classes"] = [String]()
 
         user.signUpInBackground { (success, error) in
             if success {

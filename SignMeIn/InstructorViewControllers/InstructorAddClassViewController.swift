@@ -10,11 +10,16 @@
 
 import UIKit
 import MapKit
+import Parse
 
 class InstructorAddClassViewController: UIViewController, AddLocationViewControllerDelegate {
     func finishPassing(location: MKPlacemark) {
         print("Received:")
         print(location)
+        
+        // Rounding to the 8th decimal point
+        latituteTextField.text = String(format: "%.8f", location.coordinate.latitude)
+        longituteTextField.text = String(format: "%.8f", location.coordinate.longitude)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -22,18 +27,68 @@ class InstructorAddClassViewController: UIViewController, AddLocationViewControl
             destination.delegate = self
         }
     }
+   
+    @IBOutlet weak var courseNumberTextField: UITextField!
+    @IBOutlet weak var courseNameTextField: UITextField!
+    @IBOutlet weak var classLocationTextField: UITextField!
+    @IBOutlet weak var meetingTimeTextField: UITextField!
+    
+    // ATTENTION:
+    // The widths of these text fields are fixed
+    // Needs to be fixed with autolayout
+    @IBOutlet weak var latituteTextField: UITextField!
+    @IBOutlet weak var longituteTextField: UITextField!
     
     @IBAction func onPickLocationButton(_ sender: Any) {
         performSegue(withIdentifier: "showMapSegue", sender: nil)
     }
     
+    @IBAction func onDoneButton(_ sender: Any) {
+        let newClass = PFObject(className: "Class")
+        newClass["active"] = false
+        newClass["number"] = courseNumberTextField.text
+        newClass["name"] = courseNumberTextField.text
+        newClass["location"] = classLocationTextField.text
+        newClass["time"] = meetingTimeTextField.text
+        newClass["latitute"] = latituteTextField.text
+        newClass["longitute"] = longituteTextField.text
+        newClass["students"] = []
+
+        newClass.saveInBackground(block: {(success, error) in
+            if success {
+                print("post saved")
+                // Add this class to instructor list of classes
+                var currentClasses = PFUser.current()!["classes"] as! [String]
+                currentClasses.append(newClass.objectId!)
+                PFUser.current()!["classes"] = currentClasses
+                PFUser.current()?.saveInBackground()
+            } else {
+                print("cannot save post")
+            }
+        })
+        
+        navigationController?.popViewController(animated: true)
+
+        
+        
+        
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+
 
         // Do any additional setup after loading the view.
     }
     
 
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -9,6 +9,11 @@
 // https://www.thorntech.com/2016/01/how-to-search-for-location-using-apples-mapkit/
 //
 
+// TODO:
+// Add the functionality to automatically search and assign a placemark
+//      using the user's initial location (coordinates)
+//      See onConfirmLocationButton
+
 import UIKit
 import MapKit
 
@@ -45,6 +50,13 @@ class AddLocationViewController: UIViewController, LocationSearchTableDelegate {
     @IBAction func onConfirmLocationButton(_ sender: Any) {
         // Dismiss this VC and go back to the previous InstructorAddClassVC
         // Pass a selected placemark as location data to IACVC
+        
+        // To prevent crashing when no location is selected
+        if selectedLocation == nil {
+            print("No location selected")
+            return
+        }
+        
         delegate?.finishPassing(location: selectedLocation!)
         navigationController?.popViewController(animated: true)
     }

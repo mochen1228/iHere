@@ -69,7 +69,7 @@
             </objects>
             <point key="canvasLocation" x="855" y="-494"/>
         </scene>
-        <!--Title-->
+        <!--New Class-->
         <scene sceneID="Gd0-0a-vzm">
             <objects>
                 <viewController id="3iI-Dt-oJ1" customClass="InstructorAddClassViewController" customModule="SignMeIn" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,28 +77,102 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCc-56-7BB">
-                                <rect key="frame" x="141" y="465" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Pick Location"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1t5-Ep-u1V">
+                                <rect key="frame" x="63" y="148" width="249" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SSy-Ha-NLc">
+                                <rect key="frame" x="63" y="208" width="249" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Class Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MCI-6M-2Ey">
+                                <rect key="frame" x="63" y="268" width="249" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Meeting Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ajw-l8-mA6">
+                                <rect key="frame" x="63" y="328" width="249" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latttute" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hW5-r0-VKk">
+                                <rect key="frame" x="63" y="388" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="4aI-Hb-qrO"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitute" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pc7-8r-DGs">
+                                <rect key="frame" x="192" y="388" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="4Sg-ak-3Qe"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCc-56-7BB">
+                                <rect key="frame" x="125" y="448" width="125" height="30"/>
+                                <state key="normal" title="Pick GPS Location"/>
                                 <connections>
                                     <action selector="onPickLocationButton:" destination="3iI-Dt-oJ1" eventType="touchUpInside" id="rSw-9i-hhU"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1t5-Ep-u1V" firstAttribute="top" secondItem="KFv-KC-Ocz" secondAttribute="top" constant="60" id="5eM-5B-6BL"/>
+                            <constraint firstItem="hW5-r0-VKk" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="63" id="9gT-GT-ejF"/>
+                            <constraint firstItem="gCc-56-7BB" firstAttribute="top" secondItem="hW5-r0-VKk" secondAttribute="bottom" constant="30" id="Ap4-Qc-Wlo"/>
+                            <constraint firstItem="ajw-l8-mA6" firstAttribute="top" secondItem="MCI-6M-2Ey" secondAttribute="bottom" constant="30" id="C10-Kd-JOH"/>
+                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="ajw-l8-mA6" secondAttribute="trailing" constant="63" id="DK0-vT-UBQ"/>
+                            <constraint firstItem="SSy-Ha-NLc" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="63" id="EPG-0z-g7P"/>
+                            <constraint firstItem="1t5-Ep-u1V" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="63" id="F6r-Kx-M6B"/>
+                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="SSy-Ha-NLc" secondAttribute="trailing" constant="63" id="FWh-sk-qga"/>
+                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="MCI-6M-2Ey" secondAttribute="trailing" constant="63" id="FZJ-aV-f03"/>
+                            <constraint firstItem="hW5-r0-VKk" firstAttribute="top" secondItem="ajw-l8-mA6" secondAttribute="bottom" constant="30" id="IxF-WT-fK5"/>
+                            <constraint firstItem="ajw-l8-mA6" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="63" id="J0M-Z1-5YN"/>
+                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="gCc-56-7BB" secondAttribute="trailing" constant="125" id="NFH-P2-INo"/>
+                            <constraint firstItem="gCc-56-7BB" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="125" id="WiQ-Tz-dyY"/>
+                            <constraint firstItem="MCI-6M-2Ey" firstAttribute="top" secondItem="SSy-Ha-NLc" secondAttribute="bottom" constant="30" id="XoV-ns-r5l"/>
+                            <constraint firstItem="SSy-Ha-NLc" firstAttribute="top" secondItem="1t5-Ep-u1V" secondAttribute="bottom" constant="30" id="cFc-kQ-6pM"/>
+                            <constraint firstItem="Pc7-8r-DGs" firstAttribute="top" secondItem="ajw-l8-mA6" secondAttribute="bottom" constant="30" id="g5z-g4-XKY"/>
+                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="1t5-Ep-u1V" secondAttribute="trailing" constant="63" id="kR0-9c-uL3"/>
+                            <constraint firstItem="Pc7-8r-DGs" firstAttribute="leading" relation="lessThanOrEqual" secondItem="hW5-r0-VKk" secondAttribute="trailing" priority="250" constant="9" id="lqy-yh-rhg"/>
+                            <constraint firstItem="MCI-6M-2Ey" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="63" id="w2d-wx-lYK"/>
+                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="Pc7-8r-DGs" secondAttribute="trailing" constant="63" id="yxO-UG-oqP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KFv-KC-Ocz"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="f9N-SR-gmq">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="prB-2X-xQp"/>
+                    <navigationItem key="navigationItem" title="New Class" id="f9N-SR-gmq">
+                        <barButtonItem key="backBarButtonItem" title=" " id="i97-oT-BXA"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="prB-2X-xQp">
+                            <connections>
+                                <action selector="onDoneButton:" destination="3iI-Dt-oJ1" id="VyC-mS-Cke"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="classLocationTextField" destination="MCI-6M-2Ey" id="OeN-pg-hNo"/>
+                        <outlet property="courseNameTextField" destination="SSy-Ha-NLc" id="QZI-Ry-XQE"/>
+                        <outlet property="courseNumberTextField" destination="1t5-Ep-u1V" id="2Eu-xb-Y3O"/>
+                        <outlet property="latituteTextField" destination="hW5-r0-VKk" id="ghh-si-ki4"/>
+                        <outlet property="longituteTextField" destination="Pc7-8r-DGs" id="Ty0-kk-kr3"/>
+                        <outlet property="meetingTimeTextField" destination="ajw-l8-mA6" id="NYB-59-Dg0"/>
                         <segue destination="FJD-AA-xzi" kind="show" identifier="showMapSegue" id="jWB-BD-ZQs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="soB-kp-Gag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1570" y="-495"/>
+            <point key="canvasLocation" x="1568.8" y="-495.07389162561577"/>
         </scene>
         <!--Add Location View Controller-->
         <scene sceneID="r7c-3n-spL">
