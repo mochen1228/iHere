@@ -21,6 +21,9 @@
 		A8ECF2D8222EF759004F9380 /* InstructorHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8ECF2D7222EF759004F9380 /* InstructorHome.storyboard */; };
 		A8ECF2DE222EFC6F004F9380 /* StudentClassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECF2DD222EFC6F004F9380 /* StudentClassesTableViewController.swift */; };
 		A8ECF2E1222F2417004F9380 /* InstructorClassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECF2E0222F2417004F9380 /* InstructorClassesTableViewController.swift */; };
+		A8ECF2E3222F5A67004F9380 /* InstructorAddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECF2E2222F5A67004F9380 /* InstructorAddClassViewController.swift */; };
+		A8ECF2E5222F60FB004F9380 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECF2E4222F60FB004F9380 /* AddLocationViewController.swift */; };
+		A8ECF2E8222FB35E004F9380 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECF2E7222FB35D004F9380 /* LocationSearchTable.swift */; };
 		EEC0F746FEA41462E6BDE98F /* Pods_SignMeIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88E0D9B4038BC7513168947 /* Pods_SignMeIn.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +45,9 @@
 		A8ECF2D7222EF759004F9380 /* InstructorHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InstructorHome.storyboard; sourceTree = "<group>"; };
 		A8ECF2DD222EFC6F004F9380 /* StudentClassesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClassesTableViewController.swift; sourceTree = "<group>"; };
 		A8ECF2E0222F2417004F9380 /* InstructorClassesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorClassesTableViewController.swift; sourceTree = "<group>"; };
+		A8ECF2E2222F5A67004F9380 /* InstructorAddClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorAddClassViewController.swift; sourceTree = "<group>"; };
+		A8ECF2E4222F60FB004F9380 /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
+		A8ECF2E7222FB35D004F9380 /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 		C97A8DC6692D92A73869E88C /* Pods-SignMeIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignMeIn.debug.xcconfig"; path = "Target Support Files/Pods-SignMeIn/Pods-SignMeIn.debug.xcconfig"; sourceTree = "<group>"; };
 		E88E0D9B4038BC7513168947 /* Pods_SignMeIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignMeIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -134,9 +140,20 @@
 		A8ECF2DF222F2357004F9380 /* InstructorViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A8ECF2E6222FB348004F9380 /* Models */,
+				A8ECF2E4222F60FB004F9380 /* AddLocationViewController.swift */,
+				A8ECF2E2222F5A67004F9380 /* InstructorAddClassViewController.swift */,
 				A8ECF2E0222F2417004F9380 /* InstructorClassesTableViewController.swift */,
 			);
 			path = InstructorViewControllers;
+			sourceTree = "<group>";
+		};
+		A8ECF2E6222FB348004F9380 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A8ECF2E7222FB35D004F9380 /* LocationSearchTable.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B17E58494000F1AC65A42732 /* Frameworks */ = {
@@ -276,7 +293,10 @@
 				A8CF84A0222604FE00F3094F /* SignUpViewController.swift in Sources */,
 				A8CF84992225F54C00F3094F /* LoginViewController.swift in Sources */,
 				A8CF849C2225F5CA00F3094F /* WelcomeViewController.swift in Sources */,
+				A8ECF2E8222FB35E004F9380 /* LocationSearchTable.swift in Sources */,
 				A8CF84A222263EE700F3094F /* FinishingUpViewController.swift in Sources */,
+				A8ECF2E3222F5A67004F9380 /* InstructorAddClassViewController.swift in Sources */,
+				A8ECF2E5222F60FB004F9380 /* AddLocationViewController.swift in Sources */,
 				A86A856F2225F34700C4383A /* AppDelegate.swift in Sources */,
 				A8ECF2E1222F2417004F9380 /* InstructorClassesTableViewController.swift in Sources */,
 				A86A85772225F34700C4383A /* SignMeIn.xcdatamodeld in Sources */,
@@ -438,7 +458,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uci.cmo3.SignMeIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -457,7 +477,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uci.cmo3.SignMeIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

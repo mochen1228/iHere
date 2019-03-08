@@ -35,11 +35,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // userGroup refers to the user status
             // Either Student or Instructor
             // It will take the user to the storyboard they belong
-            let userGroup = currentUser!["status"]!
+            let userGroup = currentUser!["status"] as! String
             print(userGroup)
-            let studentHome = UIStoryboard(name: "StudentHome", bundle: nil)
-            let studentHomeTabBarController = studentHome.instantiateViewController(withIdentifier: "StudentHomeTabBarController")
-            window?.rootViewController = studentHomeTabBarController
+            if userGroup == "Student" {
+                let studentHome = UIStoryboard(name: "StudentHome", bundle: nil)
+                let studentHomeTabBarController = studentHome.instantiateViewController(withIdentifier: "StudentHomeTabBarController")
+                window?.rootViewController = studentHomeTabBarController
+            } else {
+                let instructorHome = UIStoryboard(name: "InstructorHome", bundle: nil)
+                let instructorHomeTabBarController = instructorHome.instantiateViewController(withIdentifier: "InstructorHomeTabBarController")
+                window?.rootViewController = instructorHomeTabBarController
+            }
+            
         }
         return true
     }
