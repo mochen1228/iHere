@@ -16,7 +16,13 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        roundedLoginButton.layer.cornerRadius = 25
+        roundedSignUpButton.layer.cornerRadius = 25
+    
     }
+    
+    @IBOutlet weak var roundedLoginButton: UIButton!
+    @IBOutlet weak var roundedSignUpButton: UIButton!
     
     @IBAction func onLoginButton(_ sender: Any) {
         // Placeholder, segue currently performed directly by SB

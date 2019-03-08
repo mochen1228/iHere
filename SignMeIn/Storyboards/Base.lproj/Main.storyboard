@@ -19,9 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRK-tq-spm">
-                                <rect key="frame" x="87" y="618" width="201" height="30"/>
+                                <rect key="frame" x="20" y="608" width="335" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Log In">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ggk-yR-JaF"/>
+                                </constraints>
+                                <state key="normal" title="LOGIN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -30,9 +33,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QgJ-1f-KFy">
-                                <rect key="frame" x="87" y="688" width="201" height="30"/>
+                                <rect key="frame" x="20" y="678" width="335" height="50"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Sign Up">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VqU-M9-Nas"/>
+                                </constraints>
+                                <state key="normal" title="SIGN UP">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -40,28 +46,46 @@
                                     <segue destination="NpX-9U-Jla" kind="show" id="nxP-Qf-YnS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm Fucking Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-EK-7vn">
-                                <rect key="frame" x="45" y="188" width="285" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iHereLogo" translatesAutoresizingMaskIntoConstraints="NO" id="uTJ-3N-h2i">
+                                <rect key="frame" x="22.666666666666657" y="138" width="330" height="330"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="330" id="5lx-b4-3ab"/>
+                                    <constraint firstAttribute="width" constant="330" id="ymT-UY-Hdu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iHere" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAv-k5-wrw">
+                                <rect key="frame" x="20" y="518" width="335" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="EEq-Eo-Hzp"/>
+                                    <constraint firstAttribute="height" constant="60" id="iLo-0a-FHM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DcR-EK-7vn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="CCm-Jj-0Y6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QgJ-1f-KFy" secondAttribute="trailing" constant="87" id="Gb0-R5-PWY"/>
-                            <constraint firstItem="QgJ-1f-KFy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="J55-iZ-816"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DcR-EK-7vn" secondAttribute="trailing" constant="45" id="NdG-ii-81h"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QgJ-1f-KFy" secondAttribute="bottom" constant="60" id="TJg-Lg-vVK"/>
-                            <constraint firstItem="QgJ-1f-KFy" firstAttribute="top" secondItem="hRK-tq-spm" secondAttribute="bottom" constant="40" id="VID-d1-MHa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hRK-tq-spm" secondAttribute="trailing" constant="87" id="ciT-mT-XU1"/>
-                            <constraint firstItem="hRK-tq-spm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="dUM-Wb-AVQ"/>
-                            <constraint firstItem="DcR-EK-7vn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="qOU-rJ-RSI"/>
+                            <constraint firstItem="uTJ-3N-h2i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="1f2-ON-mab"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QgJ-1f-KFy" secondAttribute="trailing" constant="20" id="Gb0-R5-PWY"/>
+                            <constraint firstItem="QgJ-1f-KFy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="J55-iZ-816"/>
+                            <constraint firstItem="BAv-k5-wrw" firstAttribute="top" secondItem="uTJ-3N-h2i" secondAttribute="bottom" constant="50" id="RE0-GX-9YK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QgJ-1f-KFy" secondAttribute="bottom" constant="30" id="TJg-Lg-vVK"/>
+                            <constraint firstItem="QgJ-1f-KFy" firstAttribute="top" secondItem="hRK-tq-spm" secondAttribute="bottom" constant="20" id="VID-d1-MHa"/>
+                            <constraint firstItem="hRK-tq-spm" firstAttribute="top" secondItem="BAv-k5-wrw" secondAttribute="bottom" constant="30" id="Xhg-6Y-PBu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hRK-tq-spm" secondAttribute="trailing" constant="20" id="ciT-mT-XU1"/>
+                            <constraint firstItem="hRK-tq-spm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dUM-Wb-AVQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BAv-k5-wrw" secondAttribute="trailing" constant="20" id="tH4-vU-hSv"/>
+                            <constraint firstItem="BAv-k5-wrw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xmQ-2O-jYp"/>
+                            <constraint firstItem="uTJ-3N-h2i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zLf-T6-dOg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="qQm-gd-eS5"/>
+                    <connections>
+                        <outlet property="roundedLoginButton" destination="hRK-tq-spm" id="dx6-VF-gob"/>
+                        <outlet property="roundedSignUpButton" destination="QgJ-1f-KFy" id="qCy-lI-v57"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -338,6 +362,9 @@
             <point key="canvasLocation" x="567" y="23"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iHereLogo" width="252" height="222"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="CYu-RO-z4h"/>
         <segue reference="Ir5-uJ-ob0"/>
