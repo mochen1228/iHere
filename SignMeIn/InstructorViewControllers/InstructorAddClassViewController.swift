@@ -46,6 +46,7 @@ class InstructorAddClassViewController: UIViewController, AddLocationViewControl
     @IBAction func onDoneButton(_ sender: Any) {
         let newClass = PFObject(className: "Class")
         newClass["active"] = false
+        newClass["instructorId"] = PFUser.current()?.objectId
         newClass["number"] = courseNumberTextField.text
         newClass["name"] = courseNumberTextField.text
         newClass["location"] = classLocationTextField.text
