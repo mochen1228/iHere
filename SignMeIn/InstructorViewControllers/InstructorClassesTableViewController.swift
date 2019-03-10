@@ -50,17 +50,30 @@ class InstructorClassesTableViewController: UITableViewController, UIApplication
             self.tableView.refreshControl?.endRefreshing()
         }
     }
-    // MARK: - Table view data source
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+
+extension InstructorClassesTableViewController {
+    // Extensions for tableview VC
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return classes.count
     }
-
-
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "classCell",
                                                  for: indexPath) as! InstructorClassTableViewCell
@@ -74,22 +87,18 @@ class InstructorClassesTableViewController: UITableViewController, UIApplication
         cell.courseTimeLabel.text = classData["time"] as! String
         let currentUser = PFUser.current()!
         cell.courseInstructorLabel.text = (currentUser["firstname"] as! String)
-                                          + " " + (currentUser["lastname"] as! String)
+            + " " + (currentUser["lastname"] as! String)
         
-        // Configure the cell...
-
         return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Swifpe left to show delete button
+        if editingStyle == .delete {
+            self.classes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            
+        }
     }
-    */
-
 }

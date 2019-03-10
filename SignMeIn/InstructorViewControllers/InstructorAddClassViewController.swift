@@ -32,6 +32,7 @@ class InstructorAddClassViewController: UIViewController, AddLocationViewControl
     @IBOutlet weak var courseNameTextField: UITextField!
     @IBOutlet weak var classLocationTextField: UITextField!
     @IBOutlet weak var meetingTimeTextField: UITextField!
+    @IBOutlet weak var signInCodeTextField: UITextField!
     
     // ATTENTION:
     // The widths of these text fields are fixed
@@ -54,6 +55,15 @@ class InstructorAddClassViewController: UIViewController, AddLocationViewControl
         newClass["latitute"] = latituteTextField.text
         newClass["longitute"] = longituteTextField.text
         newClass["students"] = []
+        
+        // Set default sign in code if the user never entered one
+        let code = signInCodeTextField.text
+        if code == "" {
+            newClass["code"] = "code"
+        } else {
+            newClass["code"] = code
+        }
+
 
         newClass.saveInBackground(block: {(success, error) in
             if success {
