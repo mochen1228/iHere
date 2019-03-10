@@ -126,6 +126,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="ltr-Hn-Ach" kind="show" identifier="selectedClassSegue" id="Afi-8Q-F3e"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e81-QO-CDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -244,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="soB-kp-Gag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1712.8" y="-856.4039408866995"/>
+            <point key="canvasLocation" x="1713" y="-814"/>
         </scene>
         <!--Add Location View Controller-->
         <scene sceneID="r7c-3n-spL">
@@ -287,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvG-mF-WcR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2418" y="-856"/>
+            <point key="canvasLocation" x="2415" y="-814"/>
         </scene>
         <!--Location Search Table-->
         <scene sceneID="oAM-kn-SDW">
@@ -331,7 +334,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OCo-oA-7VJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3114" y="-856"/>
+            <point key="canvasLocation" x="3097" y="-814"/>
         </scene>
         <!--Profile-->
         <scene sceneID="I2c-8F-x8l">
@@ -361,6 +364,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLS-ar-BBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="854" y="217"/>
+        </scene>
+        <!--Course Number-->
+        <scene sceneID="nyf-l7-9DC">
+            <objects>
+                <tableViewController id="ltr-Hn-Ach" customClass="SignedInStudentsTableViewController" customModule="SignMeIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QmB-wX-H2R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eCL-Jc-Sea">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eCL-Jc-Sea" id="Khe-i4-C8A">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ltr-Hn-Ach" id="n4U-pa-exD"/>
+                            <outlet property="delegate" destination="ltr-Hn-Ach" id="xz3-j3-v1j"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Course Number" id="6lK-2S-b9q">
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="4DS-cz-V7h"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="navigationBar" destination="6lK-2S-b9q" id="Ta5-Tk-HgY"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lVY-1T-hzz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1713" y="-145"/>
         </scene>
         <!--Profile-->
         <scene sceneID="aAy-1F-OYy">

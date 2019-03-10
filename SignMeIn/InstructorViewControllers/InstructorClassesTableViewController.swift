@@ -12,7 +12,9 @@ import Parse
 class InstructorClassesTableViewController: UITableViewController, UIApplicationDelegate {
 
     var classes = [PFObject]()
+    var selectedClass: PFObject?
     let classesRefreshControl = UIRefreshControl()
+    
 
 
     @IBAction func onLogoutButton(_ sender: Any) {
@@ -35,6 +37,14 @@ class InstructorClassesTableViewController: UITableViewController, UIApplication
         loadClasses()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "selectedClassSegue" {
+            if let destinationVC = segue.destination as? SignedInStudentsTableViewController {
+                destinationVC.selectedClass = selectedClass
+                selectedClass = nil
+            }
+        }
+    }
     @objc func loadClasses() {
         let query = PFQuery(className:"Class")
         query.whereKey("instructorId", equalTo:PFUser.current()?.objectId)
@@ -50,17 +60,6 @@ class InstructorClassesTableViewController: UITableViewController, UIApplication
             self.tableView.refreshControl?.endRefreshing()
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension InstructorClassesTableViewController {
@@ -97,8 +96,11 @@ extension InstructorClassesTableViewController {
         if editingStyle == .delete {
             self.classes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            
-            
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedClass = classes[indexPath.row]
+        performSegue(withIdentifier: "selectedClassSegue", sender: nil)
     }
 }
