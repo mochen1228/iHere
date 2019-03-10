@@ -14,6 +14,8 @@ class FinishingUpViewController: UIViewController {
     @IBOutlet weak var roundedSignUpButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+
         roundedSignUpButton.layer.cornerRadius = 25
 
         // Do any additional setup after loading the view.
@@ -61,8 +63,12 @@ class FinishingUpViewController: UIViewController {
                 print("cannot sign up")
             }
         }
-            
     }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+    
     /*
     // MARK: - Navigation
 

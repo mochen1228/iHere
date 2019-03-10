@@ -59,6 +59,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         // Do any additional setup after loading the view.
         roundedNextButton.layer.cornerRadius = 25
     }
@@ -119,4 +120,7 @@ class SignUpViewController: UIViewController {
     }
     */
 
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
 }

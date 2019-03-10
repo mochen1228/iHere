@@ -14,11 +14,13 @@ import Parse
 
 class InstructorAddClassViewController: UIViewController, AddLocationViewControllerDelegate {
     
-    
     @IBOutlet weak var roundedPickLocation: UIButton!
+    // Placemark that the user selected from the map screen
+    var selectedPlacemark: MKPlacemark? = nil
     func finishPassing(location: MKPlacemark) {
         print("Received:")
         print(location)
+        selectedPlacemark = location
         
         // Rounding to the 8th decimal point
         latituteTextField.text = String(format: "%.8f", location.coordinate.latitude)
@@ -59,6 +61,15 @@ class InstructorAddClassViewController: UIViewController, AddLocationViewControl
         newClass["longitute"] = longituteTextField.text
         newClass["students"] = []
         
+//        // ATTENTION:
+//        // "location" attribute in the "Class" class refers to the String
+//        //      description of the location
+        if selectedPlacemark == nil {
+            print("No placemark selected yet, cannot add class")
+            return
+        }
+        newClass["building"] = selectedPlacemark?.name as! String
+
         // Set default sign in code if the user never entered one
         let code = signInCodeTextField.text
         if code == "" {
@@ -66,7 +77,6 @@ class InstructorAddClassViewController: UIViewController, AddLocationViewControl
         } else {
             newClass["code"] = code
         }
-
 
         newClass.saveInBackground(block: {(success, error) in
             if success {
@@ -82,11 +92,6 @@ class InstructorAddClassViewController: UIViewController, AddLocationViewControl
         })
         
         navigationController?.popViewController(animated: true)
-
-        
-        
-        
-        
     }
     
     
@@ -95,9 +100,6 @@ class InstructorAddClassViewController: UIViewController, AddLocationViewControl
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         
         roundedPickLocation.layer.cornerRadius = 25
-
-
-        // Do any additional setup after loading the view.
     }
     
 
