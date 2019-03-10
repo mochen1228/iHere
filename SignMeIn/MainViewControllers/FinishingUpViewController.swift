@@ -11,8 +11,10 @@ import Parse
 
 class FinishingUpViewController: UIViewController {
 
+    @IBOutlet weak var roundedSignUpButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        roundedSignUpButton.layer.cornerRadius = 25
 
         // Do any additional setup after loading the view.
     }

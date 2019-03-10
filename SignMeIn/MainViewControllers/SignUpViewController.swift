@@ -15,6 +15,7 @@ class SignUpViewController: UIViewController {
     
     let passwordChars = "qwertyuiopasdfghjklzxcvbnm1234567890"
     var statusChoice = ""
+    @IBOutlet weak var roundedNextButton: UIButton!
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -34,7 +35,7 @@ class SignUpViewController: UIViewController {
         // check password illegal
         if !checkPasswordLegal(with: passwordTextField.text!) {
             // Display error texts if user put down a illegal password
-            illegalPasswordTextField.text = "Passward must be length 8+ and contain only lowercase letters and numbers"
+            illegalPasswordTextField.text = "must only contain lowercase letters and numbers and be 8+ characters"
             passwordLegal = false
         } else {
             // In case users corrected their password, remove the error texts
@@ -59,6 +60,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        roundedNextButton.layer.cornerRadius = 25
     }
     
     func checkPasswordLegal(with password: String) -> Bool {

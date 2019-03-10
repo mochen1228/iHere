@@ -17,6 +17,10 @@ class ChooseStatusViewController: UIViewController {
     // "Student" or "Instructor", depends on which button click
     var currentStatusChoice = ""
     
+    @IBOutlet weak var roundedStudentButton: UIButton!
+    
+    @IBOutlet weak var roundedInstructorButton: UIButton!
+    
     @IBAction func onStudentButton(_ sender: Any) {
         currentStatusChoice = "Student"
         self.performSegue(withIdentifier: "selectedStatusSegue", sender: self)
@@ -36,7 +40,10 @@ class ChooseStatusViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //  rounding out the edges higher num more round
+        roundedStudentButton.layer.cornerRadius = 25
+        roundedInstructorButton.layer.cornerRadius = 25
         // Do any additional setup after loading the view.
     }
     
