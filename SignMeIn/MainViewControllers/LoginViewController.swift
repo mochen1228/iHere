@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        roundedLoginButton.layer.cornerRadius = 18
 
         // Do any additional setup after loading the view.
     }
@@ -20,6 +21,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var roundedLoginButton: UIButton!
     // Label under password textfield that displays errors messages to users
     @IBOutlet weak var errorLabel: UILabel!
     
