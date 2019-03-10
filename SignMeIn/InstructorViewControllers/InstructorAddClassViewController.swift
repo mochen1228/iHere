@@ -13,6 +13,9 @@ import MapKit
 import Parse
 
 class InstructorAddClassViewController: UIViewController, AddLocationViewControllerDelegate {
+    
+    
+    @IBOutlet weak var roundedPickLocation: UIButton!
     func finishPassing(location: MKPlacemark) {
         print("Received:")
         print(location)
@@ -90,6 +93,8 @@ class InstructorAddClassViewController: UIViewController, AddLocationViewControl
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
+        roundedPickLocation.layer.cornerRadius = 25
 
 
         // Do any additional setup after loading the view.
