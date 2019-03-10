@@ -1,16 +1,17 @@
 //
-//  StudentClassesTableViewController.swift
+//  StudentClassesViewController.swift
 //  SignMeIn
 //
-//  Created by ChenMo on 3/5/19.
+//  Created by ChenMo on 3/9/19.
 //  Copyright © 2019 ChenMo. All rights reserved.
 //
 
 import UIKit
 import Parse
 
-class StudentClassesTableViewController: UITableViewController, UIApplicationDelegate{
-
+class StudentClassesViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
     var classes = [PFObject]()
     let classesRefreshControl = UIRefreshControl()
 
@@ -18,14 +19,21 @@ class StudentClassesTableViewController: UITableViewController, UIApplicationDel
         super.viewDidLoad()
         classesRefreshControl.addTarget(self, action: #selector(loadClasses), for: .valueChanged)
         tableView.refreshControl = classesRefreshControl
-        tableView.scrollsToTop = true
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        // Remove empty cells in the table view
+        tableView.tableFooterView = UIView()
+
+        // tableView.scrollsToTop = true
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         loadClasses()
     }
     
     @IBAction func onLogoutButton(_ sender: Any) {
+        // Log out button that will bring the user back to the initial view
         let main = UIStoryboard(name: "Main", bundle: nil)
         let loginViewController = main.instantiateViewController(withIdentifier: "initialViewController")
         let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -34,13 +42,13 @@ class StudentClassesTableViewController: UITableViewController, UIApplicationDel
     }
     
     @objc func loadClasses() {
+        // Query the database and retrieve ALL classes that are created
         let query = PFQuery(className:"Class")
         query.findObjectsInBackground { (results: [PFObject]?, error: Error?) in
             if let error = error {
-                // Log details of the failure
                 print(error.localizedDescription)
             } else if let results = results {
-                print("success")
+                print("StudentClassesVC load data: Success")
                 self.classes = results
                 self.tableView.reloadData()
             }
@@ -49,19 +57,17 @@ class StudentClassesTableViewController: UITableViewController, UIApplicationDel
     }
 }
 
-extension StudentClassesTableViewController {
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+extension StudentClassesViewController: UITableViewDelegate, UITableViewDataSource {
+    // Extensions protocols for tableview
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return classes.count
     }
     
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentClassCell",
                                                  for: indexPath) as! StudentClassTableViewCell
         let classData = classes[indexPath.row]
@@ -74,12 +80,5 @@ extension StudentClassesTableViewController {
         
         return cell
     }
-
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            self.classes.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-    }
 }
+

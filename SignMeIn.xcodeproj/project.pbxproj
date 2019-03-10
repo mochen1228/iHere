@@ -36,6 +36,8 @@
 		A8ECF2E8222FB35E004F9380 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECF2E7222FB35D004F9380 /* LocationSearchTable.swift */; };
 		A8ECF2EA223376ED004F9380 /* InstructorClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECF2E9223376ED004F9380 /* InstructorClassTableViewCell.swift */; };
 		A8ECF2EC22349A1F004F9380 /* SignedInStudentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECF2EB22349A1F004F9380 /* SignedInStudentsTableViewController.swift */; };
+		A8ECF2EF2234A4F1004F9380 /* StudentClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECF2EE2234A4F1004F9380 /* StudentClassTableViewCell.swift */; };
+		A8ECF2F32234AF97004F9380 /* StudentClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECF2F22234AF97004F9380 /* StudentClassesViewController.swift */; };
 		EEC0F746FEA41462E6BDE98F /* Pods_SignMeIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88E0D9B4038BC7513168947 /* Pods_SignMeIn.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		A8ECF2E7222FB35D004F9380 /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 		A8ECF2E9223376ED004F9380 /* InstructorClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorClassTableViewCell.swift; sourceTree = "<group>"; };
 		A8ECF2EB22349A1F004F9380 /* SignedInStudentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInStudentsTableViewController.swift; sourceTree = "<group>"; };
+		A8ECF2EE2234A4F1004F9380 /* StudentClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClassTableViewCell.swift; sourceTree = "<group>"; };
+		A8ECF2F22234AF97004F9380 /* StudentClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClassesViewController.swift; sourceTree = "<group>"; };
 		C97A8DC6692D92A73869E88C /* Pods-SignMeIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignMeIn.debug.xcconfig"; path = "Target Support Files/Pods-SignMeIn/Pods-SignMeIn.debug.xcconfig"; sourceTree = "<group>"; };
 		E88E0D9B4038BC7513168947 /* Pods_SignMeIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignMeIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -178,7 +182,9 @@
 		A8ECF2DC222EFC52004F9380 /* StudentViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A8ECF2F22234AF97004F9380 /* StudentClassesViewController.swift */,
 				A8ECF2DD222EFC6F004F9380 /* StudentClassesTableViewController.swift */,
+				A8ECF2ED2234A49C004F9380 /* Models */,
 			);
 			path = StudentViewControllers;
 			sourceTree = "<group>";
@@ -200,6 +206,14 @@
 			children = (
 				A8ECF2E9223376ED004F9380 /* InstructorClassTableViewCell.swift */,
 				A8ECF2E7222FB35D004F9380 /* LocationSearchTable.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A8ECF2ED2234A49C004F9380 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A8ECF2EE2234A4F1004F9380 /* StudentClassTableViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -344,6 +358,7 @@
 				444B1A41223490F70003D81B /* MinoruTextField.swift in Sources */,
 				A8CF849C2225F5CA00F3094F /* WelcomeViewController.swift in Sources */,
 				A8ECF2E8222FB35E004F9380 /* LocationSearchTable.swift in Sources */,
+				A8ECF2EF2234A4F1004F9380 /* StudentClassTableViewCell.swift in Sources */,
 				A8CF84A222263EE700F3094F /* FinishingUpViewController.swift in Sources */,
 				A8ECF2E3222F5A67004F9380 /* InstructorAddClassViewController.swift in Sources */,
 				444B1A43223490F70003D81B /* TextFieldEffects.swift in Sources */,
@@ -358,6 +373,7 @@
 				A86A856F2225F34700C4383A /* AppDelegate.swift in Sources */,
 				A8ECF2E1222F2417004F9380 /* InstructorClassesTableViewController.swift in Sources */,
 				A86A85772225F34700C4383A /* SignMeIn.xcdatamodeld in Sources */,
+				A8ECF2F32234AF97004F9380 /* StudentClassesViewController.swift in Sources */,
 				444B1A48223490F70003D81B /* IsaoTextField.swift in Sources */,
 				444B1A42223490F70003D81B /* YokoTextField.swift in Sources */,
 				A8ECF2DE222EFC6F004F9380 /* StudentClassesTableViewController.swift in Sources */,

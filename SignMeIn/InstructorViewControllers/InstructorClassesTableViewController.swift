@@ -15,7 +15,15 @@ class InstructorClassesTableViewController: UITableViewController, UIApplication
     var selectedClass: PFObject?
     let classesRefreshControl = UIRefreshControl()
     
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        classesRefreshControl.addTarget(self, action: #selector(loadClasses), for: .valueChanged)
+        tableView.refreshControl = classesRefreshControl
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadClasses()
+    }
 
     @IBAction func onLogoutButton(_ sender: Any) {
         // Logout and segue to the initial VC
@@ -26,17 +34,6 @@ class InstructorClassesTableViewController: UITableViewController, UIApplication
         PFUser.logOut()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        classesRefreshControl.addTarget(self, action: #selector(loadClasses), for: .valueChanged)
-        tableView.refreshControl = classesRefreshControl
-
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        loadClasses()
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectedClassSegue" {
             if let destinationVC = segue.destination as? SignedInStudentsTableViewController {
@@ -45,7 +42,10 @@ class InstructorClassesTableViewController: UITableViewController, UIApplication
             }
         }
     }
+    
     @objc func loadClasses() {
+        // Query the classes that the current instructor created
+        // Reload data upon finishing the query
         let query = PFQuery(className:"Class")
         query.whereKey("instructorId", equalTo:PFUser.current()?.objectId)
         query.findObjectsInBackground { (results: [PFObject]?, error: Error?) in
@@ -74,12 +74,11 @@ extension InstructorClassesTableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "classCell",
+        let cell = tableView.dequeueReusableCell(withIdentifier: "instructorClassCell",
                                                  for: indexPath) as! InstructorClassTableViewCell
         let classData = classes[indexPath.row]
         
-        // TODO:
-        // Put the actual name of the instructor here
+        // Configuring cell labels
         cell.courseNumberLabel.text = classData["number"] as! String
         cell.courseNameLabel.text = classData["name"] as! String
         cell.courseLocationLabel.text = classData["location"] as! String
