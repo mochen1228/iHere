@@ -24,6 +24,7 @@ protocol AddLocationViewControllerDelegate {
 
 class AddLocationViewController: UIViewController, LocationSearchTableDelegate {
     
+    @IBOutlet weak var roundedConfirmLocationButton: UIButton!
     func passSelectedLocation(location: MKPlacemark) {
         // Set of statements to run when received data from the search table
         // print("Placemark received:")
@@ -98,7 +99,10 @@ class AddLocationViewController: UIViewController, LocationSearchTableDelegate {
         // Nice to have feature for better aesthetics
         resultSearchController?.dimsBackgroundDuringPresentation = true
         definesPresentationContext = true
+        
+        roundedConfirmLocationButton.layer.cornerRadius = 25
     }
+    
 
 }
 

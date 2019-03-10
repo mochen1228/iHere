@@ -335,4 +335,5 @@
     <resources>
         <image name="placeholder" width="1500" height="1500"/>
     </resources>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
