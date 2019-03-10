@@ -48,7 +48,7 @@ class InstructorAddClassViewController: UIViewController, AddLocationViewControl
         newClass["active"] = false
         newClass["instructorId"] = PFUser.current()?.objectId
         newClass["number"] = courseNumberTextField.text
-        newClass["name"] = courseNumberTextField.text
+        newClass["name"] = courseNameTextField.text
         newClass["location"] = classLocationTextField.text
         newClass["time"] = meetingTimeTextField.text
         newClass["latitute"] = latituteTextField.text

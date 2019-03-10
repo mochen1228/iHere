@@ -12,8 +12,11 @@ import Parse
 class InstructorClassesTableViewController: UITableViewController, UIApplicationDelegate {
 
     var classes = [PFObject]()
+    let classesRefreshControl = UIRefreshControl()
+
 
     @IBAction func onLogoutButton(_ sender: Any) {
+        // Logout and segue to the initial VC
         let main = UIStoryboard(name: "Main", bundle: nil)
         let loginViewController = main.instantiateViewController(withIdentifier: "initialViewController")
         let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -23,19 +26,16 @@ class InstructorClassesTableViewController: UITableViewController, UIApplication
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        classesRefreshControl.addTarget(self, action: #selector(loadClasses), for: .valueChanged)
+        tableView.refreshControl = classesRefreshControl
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
         loadClasses()
     }
-
-    func loadClasses() {
+    
+    @objc func loadClasses() {
         let query = PFQuery(className:"Class")
         query.whereKey("instructorId", equalTo:PFUser.current()?.objectId)
         query.findObjectsInBackground { (results: [PFObject]?, error: Error?) in
@@ -44,13 +44,10 @@ class InstructorClassesTableViewController: UITableViewController, UIApplication
                 print(error.localizedDescription)
             } else if let results = results {
                 print("success")
-                // Do something with the found objects
-//                for object in objects {
-//                    print(object.objectId as Any)
-//                }
                 self.classes = results
                 self.tableView.reloadData()
             }
+            self.tableView.refreshControl?.endRefreshing()
         }
     }
     // MARK: - Table view data source
@@ -69,11 +66,16 @@ class InstructorClassesTableViewController: UITableViewController, UIApplication
                                                  for: indexPath) as! InstructorClassTableViewCell
         let classData = classes[indexPath.row]
         
+        // TODO:
+        // Put the actual name of the instructor here
         cell.courseNumberLabel.text = classData["number"] as! String
         cell.courseNameLabel.text = classData["name"] as! String
         cell.courseLocationLabel.text = classData["location"] as! String
         cell.courseTimeLabel.text = classData["time"] as! String
-        cell.courseInstructorLabel.text = "Richard Pattis"
+        let currentUser = PFUser.current()!
+        cell.courseInstructorLabel.text = (currentUser["firstname"] as! String)
+                                          + " " + (currentUser["lastname"] as! String)
+        
         // Configure the cell...
 
         return cell
