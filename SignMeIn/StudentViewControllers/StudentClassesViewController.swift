@@ -13,6 +13,7 @@ class StudentClassesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var classes = [PFObject]()
+    var selectedClass: PFObject?
     let classesRefreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
@@ -39,6 +40,15 @@ class StudentClassesViewController: UIViewController {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.window?.rootViewController = loginViewController
         PFUser.logOut()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "studentSelectedClassSegue" {
+            if let destinationVC = segue.destination as? StudentClassDetailsViewController {
+                destinationVC.selectedClass = selectedClass
+                selectedClass = nil
+            }
+        }
     }
     
     @objc func loadClasses() {
@@ -79,6 +89,13 @@ extension StudentClassesViewController: UITableViewDelegate, UITableViewDataSour
         cell.courseInstructorLabel.text = "Chen Mo"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Perform actions when user taps on a cell
+        // Pass selected class data to the class details VC
+        selectedClass = classes[indexPath.row]
+        performSegue(withIdentifier: "studentSelectedClassSegue", sender: nil)
     }
 }
 

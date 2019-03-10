@@ -99,6 +99,8 @@ extension InstructorClassesTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Perform actions when user taps on a cell
+        // Pass selected class data to the class details VC
         selectedClass = classes[indexPath.row]
         performSegue(withIdentifier: "selectedClassSegue", sender: nil)
     }
