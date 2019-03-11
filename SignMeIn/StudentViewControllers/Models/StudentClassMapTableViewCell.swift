@@ -11,7 +11,6 @@ import MapKit
 
 class StudentClassMapTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var mapView: MKMapView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -8,5 +8,6 @@ target 'SignMeIn' do
   # Pods for SignMeIn
   pod 'Parse'
   pod 'Alamofire'
+  pod 'SCLAlertView'
 
 end

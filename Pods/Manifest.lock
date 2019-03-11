@@ -5,22 +5,26 @@ PODS:
     - Parse/Core (= 1.17.2)
   - Parse/Core (1.17.2):
     - Bolts/Tasks (~> 1.9)
+  - SCLAlertView (0.8)
 
 DEPENDENCIES:
   - Alamofire
   - Parse
+  - SCLAlertView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Bolts
     - Parse
+    - SCLAlertView
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Parse: 3b31a3dd1777b07ee7f0caee32fafbff544483a5
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
 
-PODFILE CHECKSUM: 29605b757db1d3e86b540b233a8b13cfaf4f7ec4
+PODFILE CHECKSUM: 31cca8d30e3413e0d7a33ec18e5c473f02f46953
 
 COCOAPODS: 1.6.0.rc.2
