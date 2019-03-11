@@ -206,7 +206,7 @@
                                 <rect key="frame" x="0.0" y="371" width="375" height="358"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentClassMapCell" rowHeight="56" id="f8j-r0-pmn" customClass="StudentClassMapTableViewCell" customModule="SignMeIn" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="studentClassMapCell" rowHeight="56" id="f8j-r0-pmn" customClass="StudentClassMapTableViewCell" customModule="SignMeIn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f8j-r0-pmn" id="fli-zO-eb4">
@@ -303,6 +303,7 @@
                         <outlet property="courseNameLabel" destination="tQ2-A8-mQV" id="HJp-XT-Vlc"/>
                         <outlet property="mapView" destination="SS4-zV-XcG" id="e2l-0r-ghh"/>
                         <outlet property="navigationBar" destination="dhN-tW-86n" id="WJj-Pm-dfW"/>
+                        <outlet property="roundedCheckInButton" destination="hKe-Fk-g4R" id="jlE-Be-gcd"/>
                         <outlet property="tableView" destination="Zog-RN-v5V" id="dpG-fH-nmu"/>
                     </connections>
                 </viewController>

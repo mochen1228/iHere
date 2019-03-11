@@ -18,6 +18,7 @@ class StudentClassDetailsViewController: UIViewController {
 
     var selectedClass: PFObject? = nil
     
+    @IBOutlet weak var roundedCheckInButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var navigationBar: UINavigationItem!
@@ -32,7 +33,7 @@ class StudentClassDetailsViewController: UIViewController {
     @IBAction func onCheckInButton(_ sender: Any) {
         if isLegalCheckInLocation(within: 30.0) {
             showCheckInCodeAlert()
-        } else
+        } else {
             showIllegalLocationAlert()
         }
     }
@@ -52,6 +53,7 @@ class StudentClassDetailsViewController: UIViewController {
         loadMap()
         loadLocationManager()
         loadLabels()
+        roundedCheckInButton.layer.cornerRadius = 15
     }
 }
 
@@ -140,7 +142,7 @@ extension StudentClassDetailsViewController {
             showCloseButton: false, showCircularIcon: false
         )
         let alert = SCLAlertView(appearance: appearance)
-        alert.addButton("Fine", backgroundColor: UIColor.red, textColor: UIColor.white) {
+        alert.addButton("Fine", backgroundColor: UIColor(red: 254.0/255.0, green: 92.0/255.0, blue: 71.0/255.0, alpha: 1.0), textColor: UIColor.white) {
             alert.hideView()
             print("Cancel tapped")
         }
