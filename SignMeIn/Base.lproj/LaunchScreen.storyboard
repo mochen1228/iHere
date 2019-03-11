@@ -18,31 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="iHereLogo" translatesAutoresizingMaskIntoConstraints="NO" id="YyF-Ya-q4d">
-                                <rect key="frame" x="61.5" y="120" width="252" height="222"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="252" id="fQJ-Yy-PAZ"/>
-                                    <constraint firstAttribute="height" constant="222" id="uXn-CM-RaF"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="eSv-hX-d4U">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="iHere " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fb5-f7-SdP">
-                                <rect key="frame" x="62" y="362" width="268" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="pPf-bl-bTH"/>
-                                    <constraint firstAttribute="height" constant="50" id="vKr-xZ-7LX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YyF-Ya-q4d" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FA6-Kz-UiX"/>
-                            <constraint firstItem="YyF-Ya-q4d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="KuX-CL-uKF"/>
-                            <constraint firstItem="Fb5-f7-SdP" firstAttribute="top" secondItem="YyF-Ya-q4d" secondAttribute="bottom" constant="20" id="aWI-fm-GSf"/>
+                            <constraint firstItem="eSv-hX-d4U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6Po-dE-W6U"/>
+                            <constraint firstItem="eSv-hX-d4U" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="jsf-fg-rA0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eSv-hX-d4U" secondAttribute="trailing" id="kCf-EA-3Be"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eSv-hX-d4U" secondAttribute="bottom" id="ySz-s2-gNR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -53,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="iHereLogo" width="252" height="222"/>
+        <image name="launchScreen" width="665" height="667"/>
     </resources>
 </document>
