@@ -5,6 +5,8 @@
 //  Created by ChenMo on 3/9/19.
 //  Copyright © 2019 ChenMo. All rights reserved.
 //
+//  For information on SCLAlertView:
+//  https://github.com/vikmeup/SCLAlertView-Swift
 
 import UIKit
 import Parse
@@ -28,9 +30,9 @@ class StudentClassDetailsViewController: UIViewController {
     @IBOutlet weak var courseLocationLabel: UILabel!
     
     @IBAction func onCheckInButton(_ sender: Any) {
-        if isLegalCheckInLocation(within: 15000.0) {
+        if isLegalCheckInLocation(within: 30.0) {
             showCheckInCodeAlert()
-        } else {
+        } else
             showIllegalLocationAlert()
         }
     }
