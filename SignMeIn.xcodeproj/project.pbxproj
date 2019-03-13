@@ -57,6 +57,7 @@
 		444B1A3C223490F70003D81B /* AkiraTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkiraTextField.swift; sourceTree = "<group>"; };
 		444B1A3D223490F70003D81B /* IsaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsaoTextField.swift; sourceTree = "<group>"; };
 		444B1A3E223490F70003D81B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A810CFFF2238B6B0004C0856 /* SignMeIn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SignMeIn.entitlements; sourceTree = "<group>"; };
 		A864FDBD223757C500E6B102 /* InstructorCheckInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorCheckInTableViewCell.swift; sourceTree = "<group>"; };
 		A86A856B2225F34700C4383A /* SignMeIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignMeIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A86A856E2225F34700C4383A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +149,7 @@
 		A86A856D2225F34700C4383A /* SignMeIn */ = {
 			isa = PBXGroup;
 			children = (
+				A810CFFF2238B6B0004C0856 /* SignMeIn.entitlements */,
 				A8ECF2DF222F2357004F9380 /* InstructorViewControllers */,
 				A8ECF2DC222EFC52004F9380 /* StudentViewControllers */,
 				A8CF849A2225F55200F3094F /* MainViewControllers */,
@@ -266,6 +268,14 @@
 				TargetAttributes = {
 					A86A856A2225F34700C4383A = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -534,15 +544,18 @@
 			baseConfigurationReference = C97A8DC6692D92A73869E88C /* Pods-SignMeIn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B99X987539;
+				DEVELOPMENT_TEAM = KQ8G7S64NK;
 				INFOPLIST_FILE = SignMeIn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.uci.cmo3.SignMeIn;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uci.cmo3.iHere;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -553,15 +566,18 @@
 			baseConfigurationReference = 1E71EA60823D85D60B5F92E2 /* Pods-SignMeIn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B99X987539;
+				DEVELOPMENT_TEAM = KQ8G7S64NK;
 				INFOPLIST_FILE = SignMeIn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.uci.cmo3.SignMeIn;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uci.cmo3.iHere;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
