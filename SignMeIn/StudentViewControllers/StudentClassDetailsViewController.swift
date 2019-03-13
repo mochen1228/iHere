@@ -26,12 +26,12 @@ class StudentClassDetailsViewController: UIViewController {
     var pin = MKPointAnnotation()
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation? = nil
-
+    
     @IBOutlet weak var courseNameLabel: UILabel!
     @IBOutlet weak var courseLocationLabel: UILabel!
     
     @IBAction func onCheckInButton(_ sender: Any) {
-        if isLegalCheckInLocation(within: 30.0) {
+        if isLegalCheckInLocation(within: 3000.0) {
             showCheckInCodeAlert()
         } else {
             showIllegalLocationAlert()
@@ -123,6 +123,8 @@ extension StudentClassDetailsViewController {
             // TODO:
             // Find a way to tell the user that the code is wrong
             if self.isLegalCheckInCode(code.text!) {
+                self.saveCheckInSession()
+                // Dismiss the window
                 alert.hideView()
             }
         }
@@ -192,6 +194,34 @@ extension StudentClassDetailsViewController: CLLocationManagerDelegate {
             }
             currentLocation = location
             print("user is currently at: ", currentLocation?.coordinate)
+        }
+    }
+}
+
+extension StudentClassDetailsViewController {
+    func saveCheckInSession() {
+        // Creating the "checkin" class to store user check in sessions
+        //      to both the current user and the class
+        var checkin = PFObject(className: "checkin")
+        checkin["class"] = self.selectedClass
+        checkin["student"] = PFUser.current()
+        // Add to class
+        self.selectedClass!.add(checkin, forKey: "checkins")
+        self.selectedClass!.saveInBackground { (success, error) in
+            if success {
+                print("check in successfully saved to class")
+            } else {
+                print("check in not saved to class")
+            }
+        }
+        // Add to user
+        PFUser.current()?.add(checkin, forKey: "checkins")
+        PFUser.current()?.saveInBackground{ (success, error) in
+            if success {
+                print("check in successfully saved to user")
+            } else {
+                print("check in not saved to yser")
+            }
         }
     }
 }

@@ -59,6 +59,7 @@ class InstructorAddClassViewController: UIViewController, AddLocationViewControl
         newClass["time"] = meetingTimeTextField.text
         newClass["latitute"] = latituteTextField.text
         newClass["longitute"] = longituteTextField.text
+        newClass["checkins"] = [PFObject]()
         newClass["students"] = []
         
 //        // ATTENTION:
@@ -82,9 +83,10 @@ class InstructorAddClassViewController: UIViewController, AddLocationViewControl
             if success {
                 print("post saved")
                 // Add this class to instructor list of classes
-                var currentClasses = PFUser.current()!["classes"] as! [String]
-                currentClasses.append(newClass.objectId!)
-                PFUser.current()!["classes"] = currentClasses
+                PFUser.current()!.add(newClass, forKey: "classes")
+//                var currentClasses = PFUser.current()!["classes"] as! [String]
+//                currentClasses.append(newClass)
+//                PFUser.current()!["classes"] = currentClasses
                 PFUser.current()?.saveInBackground()
             } else {
                 print("cannot save post")

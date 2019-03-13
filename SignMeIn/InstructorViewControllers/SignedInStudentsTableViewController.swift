@@ -12,23 +12,92 @@ import Parse
 class SignedInStudentsTableViewController: UITableViewController {
 
     var selectedClass: PFObject?
+    var checkins = [PFObject]()
+    var checkedInStudents = [PFUser]() {
+        didSet{
+            print("check in list updated")
+            self.tableView.reloadData()
+
+        }
+    }
+    
     @IBOutlet weak var navigationBar: UINavigationItem!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadCheckins()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.title = selectedClass?["number"] as! String
-        }
+        let checkinRefreshControl = UIRefreshControl()
+        checkinRefreshControl.addTarget(self, action: #selector(loadCheckins), for: .valueChanged)
+        tableView.refreshControl = checkinRefreshControl
+
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return checkedInStudents.count
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "signedInCell", for: indexPath) as! InstructorCheckInTableViewCell
+        let currentStudent = checkedInStudents[indexPath.row]
+        let currentCheckin = checkins[indexPath.row]
+        cell.studentNameLabel.text = (currentStudent["firstname"] as! String) + " " + (currentStudent["lastname"] as! String)
+        cell.studentUsernameLabel.text = currentStudent.username as! String
+        
+        // Date formatting
+        let currentDate = currentCheckin.createdAt!
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.amSymbol = "AM"
+        formatter.pmSymbol = "PM"
+        
+        formatter.dateFormat = "yyyy-MM-dd h:mm a"
+        
+        cell.checkedInTimeLabel.text = formatter.string(from: currentDate)
+        return cell
+    }
+    
+    @objc func loadCheckins() {
+        // To load all the students that have checked in to this class
+        // There are two steps:
+        //      1. Retrieve all the checkin objects related to this class
+        //      2. For each check in, retrieve the student in this check in
+        
+        // Clear previous data
+        checkins = [PFObject]()
+        checkedInStudents = [PFUser]()
+        
+        // Retrieve checkins
+        let query = PFQuery(className: "checkin")
+        query.whereKey("class", equalTo: selectedClass!)
+        query.findObjectsInBackground {(checkins, error) in
+            if checkins != nil {
+                self.checkins = checkins!
 
+                for checkin in self.checkins {
+                    // Retrieve the student in this check in
+                    let query = PFQuery(className: "_User")
+                    query.whereKey("objectId", equalTo: (checkin["student"] as! PFUser).objectId)
+                    query.findObjectsInBackground() {(result, error) in
+                        if result != [] {
+                            self.checkedInStudents.append(result!.first as! PFUser)
+                        }
+                    }
+                }
+
+            }
+        }
+        self.tableView.refreshControl?.endRefreshing()
+    }
 }

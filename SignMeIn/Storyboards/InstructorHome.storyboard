@@ -502,13 +502,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eCL-Jc-Sea">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="signedInCell" rowHeight="52" id="eCL-Jc-Sea" customClass="InstructorCheckInTableViewCell" customModule="SignMeIn" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="52"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eCL-Jc-Sea" id="Khe-i4-C8A">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="51.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Student Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gse-Y8-h11">
+                                            <rect key="frame" x="15.999999999999993" y="8" width="98.333333333333314" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HY-wg-aVr">
+                                            <rect key="frame" x="15.999999999999993" y="30" width="98.333333333333314" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="12 Mar 2019 12:00 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyr-4B-ObY">
+                                            <rect key="frame" x="122.33333333333333" y="5" width="236.66666666666669" height="39.666666666666664"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0HY-wg-aVr" firstAttribute="leading" secondItem="Khe-i4-C8A" secondAttribute="leading" constant="16" id="CqY-pZ-sXm"/>
+                                        <constraint firstItem="gse-Y8-h11" firstAttribute="leading" secondItem="Khe-i4-C8A" secondAttribute="leading" constant="16" id="EzH-mD-OLJ"/>
+                                        <constraint firstItem="0HY-wg-aVr" firstAttribute="top" secondItem="gse-Y8-h11" secondAttribute="bottom" constant="4" id="ID3-QQ-R7I"/>
+                                        <constraint firstItem="jyr-4B-ObY" firstAttribute="leading" secondItem="gse-Y8-h11" secondAttribute="trailing" constant="8" id="KFe-xx-UCd"/>
+                                        <constraint firstItem="jyr-4B-ObY" firstAttribute="leading" secondItem="0HY-wg-aVr" secondAttribute="trailing" constant="8" id="Nfa-17-vhz"/>
+                                        <constraint firstAttribute="trailing" secondItem="jyr-4B-ObY" secondAttribute="trailing" constant="16" id="VKk-3I-FDO"/>
+                                        <constraint firstAttribute="bottom" secondItem="0HY-wg-aVr" secondAttribute="bottom" constant="8" id="bTA-ZJ-c9Q"/>
+                                        <constraint firstAttribute="bottom" secondItem="jyr-4B-ObY" secondAttribute="bottom" constant="7" id="jI7-Vd-Ocb"/>
+                                        <constraint firstItem="gse-Y8-h11" firstAttribute="top" secondItem="Khe-i4-C8A" secondAttribute="top" constant="8" id="pt7-u4-MjT"/>
+                                        <constraint firstItem="jyr-4B-ObY" firstAttribute="top" secondItem="Khe-i4-C8A" secondAttribute="top" constant="5" id="uiE-0s-4ek"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="checkedInTimeLabel" destination="jyr-4B-ObY" id="4OZ-yp-DEp"/>
+                                    <outlet property="studentNameLabel" destination="gse-Y8-h11" id="vvY-81-Q1i"/>
+                                    <outlet property="studentUsernameLabel" destination="0HY-wg-aVr" id="hl8-RH-iwX"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -525,7 +562,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVY-1T-hzz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="-145"/>
+            <point key="canvasLocation" x="1712.8" y="-145.56650246305421"/>
         </scene>
         <!--Profile-->
         <scene sceneID="aAy-1F-OYy">

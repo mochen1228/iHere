@@ -9,6 +9,10 @@
 // TODO: finish the functionality of checking if username
 // already exits before entering the name input page
 
+// *************************
+// To launch parse dashboard:
+// parse-dashboard --appId myAppId --masterKey myMasterKey --serverURL "https://check-me-in-007.herokuapp.com/parse"
+
 import UIKit
 import CoreData
 import Parse

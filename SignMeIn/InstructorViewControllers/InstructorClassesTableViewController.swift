@@ -92,7 +92,34 @@ extension InstructorClassesTableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         // Swifpe left to show delete button
+        // This action will remove all references of this "Class" object
+        //      from the parse dababase
+        //
         if editingStyle == .delete {
+            let toRemove = classes[indexPath.row]
+            
+            for checkin in toRemove["checkins"]! as! [PFObject] {
+                checkin.deleteInBackground { (success, error) in
+                    if let error = error {
+                        print("Error trying to remove checkin session:")
+                        print(checkin)
+                    }
+                }
+            }
+            
+            let userCurrentClasses = PFUser.current()!["classes"]!
+            for classes in userCurrentClasses as! [PFObject] {
+                print(classes.objectId!)
+                print(toRemove.objectId)
+                if classes.objectId!.isEqual(toRemove.objectId!) {
+                    print("hi")
+                    print([classes])
+                    PFUser.current()!.removeObjects(in: [classes], forKey: "classes")
+                    PFUser.current()!.saveInBackground()
+                }
+            }
+
+            
             self.classes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
