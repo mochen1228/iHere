@@ -95,10 +95,14 @@ extension InstructorClassesTableViewController {
         // This action will remove all references of this "Class" object
         //      from the parse dababase
         //
+        
+        // TODO:
+        // Remove all associated check in objects in all students
         if editingStyle == .delete {
             let toRemove = classes[indexPath.row]
+            let toRemoveCheckins = toRemove["checkins"]! as! [PFObject]
             
-            for checkin in toRemove["checkins"]! as! [PFObject] {
+            for checkin in toRemoveCheckins {
                 checkin.deleteInBackground { (success, error) in
                     if let error = error {
                         print("Error trying to remove checkin session:")
@@ -118,7 +122,8 @@ extension InstructorClassesTableViewController {
                     PFUser.current()!.saveInBackground()
                 }
             }
-
+            
+             toRemove.deleteInBackground()
             
             self.classes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)

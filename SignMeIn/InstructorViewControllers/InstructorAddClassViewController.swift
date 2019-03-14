@@ -81,7 +81,7 @@ class InstructorAddClassViewController: UIViewController, AddLocationViewControl
 
         newClass.saveInBackground(block: {(success, error) in
             if success {
-                print("post saved")
+                print("Class saved to Parse")
                 // Add this class to instructor list of classes
                 PFUser.current()!.add(newClass, forKey: "classes")
 //                var currentClasses = PFUser.current()!["classes"] as! [String]
@@ -89,7 +89,7 @@ class InstructorAddClassViewController: UIViewController, AddLocationViewControl
 //                PFUser.current()!["classes"] = currentClasses
                 PFUser.current()?.saveInBackground()
             } else {
-                print("cannot save post")
+                print("Cannot save class to Parse")
             }
         })
         
@@ -101,6 +101,7 @@ class InstructorAddClassViewController: UIViewController, AddLocationViewControl
         super.viewDidLoad()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         
+        // Styling for rounded button
         roundedPickLocation.layer.cornerRadius = 25
     }
     

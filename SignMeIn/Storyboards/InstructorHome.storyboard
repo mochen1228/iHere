@@ -554,7 +554,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Course Number" id="6lK-2S-b9q">
-                        <barButtonItem key="rightBarButtonItem" title="Clear" id="4DS-cz-V7h"/>
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="4DS-cz-V7h">
+                            <connections>
+                                <action selector="onClearButton:" destination="ltr-Hn-Ach" id="tHM-V3-Yaa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="navigationBar" destination="6lK-2S-b9q" id="Ta5-Tk-HgY"/>
