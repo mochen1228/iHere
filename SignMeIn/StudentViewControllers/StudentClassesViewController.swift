@@ -14,15 +14,19 @@ class StudentClassesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var classes = [PFObject]()
     var selectedClass: PFObject?
+    var currentUser: PFUser?
     let classesRefreshControl = UIRefreshControl()
-
+    @IBOutlet weak var navigationBar: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentUser = PFUser.current()!
         classesRefreshControl.addTarget(self, action: #selector(loadClasses), for: .valueChanged)
         tableView.refreshControl = classesRefreshControl
         tableView.delegate = self
         tableView.dataSource = self
         
+        navigationBar.title = (currentUser!["firstname"] as! String) + " " + (currentUser!["lastname"] as! String)
         // Remove empty cells in the table view
         tableView.tableFooterView = UIView()
 

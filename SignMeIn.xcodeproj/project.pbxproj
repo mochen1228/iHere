@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		440C2C99223A1D850080B5F7 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440C2C98223A1D850080B5F7 /* HistoryTableViewCell.swift */; };
 		444B1A3F223490F70003D81B /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B1A33223490F70003D81B /* YoshikoTextField.swift */; };
 		444B1A40223490F70003D81B /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B1A35223490F70003D81B /* HoshiTextField.swift */; };
 		444B1A41223490F70003D81B /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B1A36223490F70003D81B /* MinoruTextField.swift */; };
@@ -18,6 +17,7 @@
 		444B1A46223490F70003D81B /* KaedeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B1A3B223490F70003D81B /* KaedeTextField.swift */; };
 		444B1A47223490F70003D81B /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B1A3C223490F70003D81B /* AkiraTextField.swift */; };
 		444B1A48223490F70003D81B /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B1A3D223490F70003D81B /* IsaoTextField.swift */; };
+		A8004814223A1E810012A889 /* StudentClassHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8004813223A1E810012A889 /* StudentClassHistoryTableViewCell.swift */; };
 		A864FDBE223757C500E6B102 /* InstructorCheckInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A864FDBD223757C500E6B102 /* InstructorCheckInTableViewCell.swift */; };
 		A86A856F2225F34700C4383A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A856E2225F34700C4383A /* AppDelegate.swift */; };
 		A86A85742225F34700C4383A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A86A85722225F34700C4383A /* Main.storyboard */; };
@@ -40,13 +40,11 @@
 		A8ECF2EF2234A4F1004F9380 /* StudentClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECF2EE2234A4F1004F9380 /* StudentClassTableViewCell.swift */; };
 		A8ECF2F32234AF97004F9380 /* StudentClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECF2F22234AF97004F9380 /* StudentClassesViewController.swift */; };
 		A8ECF2F72234BE4B004F9380 /* StudentClassDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECF2F62234BE4B004F9380 /* StudentClassDetailsViewController.swift */; };
-		A8ECF2F92234C133004F9380 /* StudentClassMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECF2F82234C133004F9380 /* StudentClassMapTableViewCell.swift */; };
 		EEC0F746FEA41462E6BDE98F /* Pods_SignMeIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88E0D9B4038BC7513168947 /* Pods_SignMeIn.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1E71EA60823D85D60B5F92E2 /* Pods-SignMeIn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignMeIn.release.xcconfig"; path = "Target Support Files/Pods-SignMeIn/Pods-SignMeIn.release.xcconfig"; sourceTree = "<group>"; };
-		440C2C98223A1D850080B5F7 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		444B1A33223490F70003D81B /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
 		444B1A34223490F70003D81B /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
 		444B1A35223490F70003D81B /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
@@ -59,6 +57,7 @@
 		444B1A3C223490F70003D81B /* AkiraTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkiraTextField.swift; sourceTree = "<group>"; };
 		444B1A3D223490F70003D81B /* IsaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsaoTextField.swift; sourceTree = "<group>"; };
 		444B1A3E223490F70003D81B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8004813223A1E810012A889 /* StudentClassHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClassHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		A810CFFF2238B6B0004C0856 /* SignMeIn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SignMeIn.entitlements; sourceTree = "<group>"; };
 		A864FDBD223757C500E6B102 /* InstructorCheckInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorCheckInTableViewCell.swift; sourceTree = "<group>"; };
 		A86A856B2225F34700C4383A /* SignMeIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignMeIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +83,6 @@
 		A8ECF2EE2234A4F1004F9380 /* StudentClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClassTableViewCell.swift; sourceTree = "<group>"; };
 		A8ECF2F22234AF97004F9380 /* StudentClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClassesViewController.swift; sourceTree = "<group>"; };
 		A8ECF2F62234BE4B004F9380 /* StudentClassDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClassDetailsViewController.swift; sourceTree = "<group>"; };
-		A8ECF2F82234C133004F9380 /* StudentClassMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClassMapTableViewCell.swift; sourceTree = "<group>"; };
 		C97A8DC6692D92A73869E88C /* Pods-SignMeIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignMeIn.debug.xcconfig"; path = "Target Support Files/Pods-SignMeIn/Pods-SignMeIn.debug.xcconfig"; sourceTree = "<group>"; };
 		E88E0D9B4038BC7513168947 /* Pods_SignMeIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignMeIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -222,9 +220,8 @@
 		A8ECF2ED2234A49C004F9380 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A8ECF2F82234C133004F9380 /* StudentClassMapTableViewCell.swift */,
+				A8004813223A1E810012A889 /* StudentClassHistoryTableViewCell.swift */,
 				A8ECF2EE2234A4F1004F9380 /* StudentClassTableViewCell.swift */,
-				440C2C98223A1D850080B5F7 /* HistoryTableViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -378,14 +375,13 @@
 				A8CF84992225F54C00F3094F /* LoginViewController.swift in Sources */,
 				444B1A41223490F70003D81B /* MinoruTextField.swift in Sources */,
 				A8CF849C2225F5CA00F3094F /* WelcomeViewController.swift in Sources */,
-				A8ECF2F92234C133004F9380 /* StudentClassMapTableViewCell.swift in Sources */,
 				A8ECF2E8222FB35E004F9380 /* LocationSearchTable.swift in Sources */,
-				440C2C99223A1D850080B5F7 /* HistoryTableViewCell.swift in Sources */,
 				A8ECF2EF2234A4F1004F9380 /* StudentClassTableViewCell.swift in Sources */,
 				A8CF84A222263EE700F3094F /* FinishingUpViewController.swift in Sources */,
 				A8ECF2E3222F5A67004F9380 /* InstructorAddClassViewController.swift in Sources */,
 				444B1A43223490F70003D81B /* TextFieldEffects.swift in Sources */,
 				A8ECF2F72234BE4B004F9380 /* StudentClassDetailsViewController.swift in Sources */,
+				A8004814223A1E810012A889 /* StudentClassHistoryTableViewCell.swift in Sources */,
 				444B1A46223490F70003D81B /* KaedeTextField.swift in Sources */,
 				444B1A47223490F70003D81B /* AkiraTextField.swift in Sources */,
 				444B1A44223490F70003D81B /* JiroTextField.swift in Sources */,

@@ -12,6 +12,14 @@
 // *************************
 // To launch parse dashboard:
 // parse-dashboard --appId myAppId --masterKey myMasterKey --serverURL "https://check-me-in-007.herokuapp.com/parse"
+// *************************
+
+// TODO:
+// 1. Add button for instructors to change sign in code
+// 2. Add VC to the second tab for users to change their first and last name
+// 3. Move logout button to the second tab bar
+// 4. Add a few more alerts to check in page to propt the user what's wrong
+// 4. Add VC to third tab for users to check all signed in classes (Optional)
 
 import UIKit
 import CoreData

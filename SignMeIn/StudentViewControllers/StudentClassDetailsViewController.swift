@@ -27,8 +27,17 @@ class StudentClassDetailsViewController: UIViewController {
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation? = nil
     
+    let historyRefreshControl = UIRefreshControl()
+
+    
     @IBOutlet weak var courseNameLabel: UILabel!
     @IBOutlet weak var courseLocationLabel: UILabel!
+    
+    var checkinHistory = [PFObject]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     @IBAction func onCheckInButton(_ sender: Any) {
         if isLegalCheckInLocation(within: 3000.0) {
@@ -45,31 +54,51 @@ class StudentClassDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.title = selectedClass!["number"] as! String
+        navigationBar.title = selectedClass!["number"] as? String
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.reloadData()
         
+        tableView.tableFooterView = UIView()
+        historyRefreshControl.addTarget(self, action: #selector(loadClassHistory), for: .valueChanged)
+        tableView.refreshControl = historyRefreshControl
+
+
+
         loadMap()
         loadLocationManager()
         loadLabels()
+        loadClassHistory()
         roundedCheckInButton.layer.cornerRadius = 15
-        
+        tableView.reloadData()
     }
 }
 
 extension StudentClassDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     // Extension protocols for table view
     func numberOfSections(in tableView: UITableView) -> Int {
+        // TODO:
+        // Section the check in entries with days
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return checkinHistory.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "studentClassMapCell", for: indexPath) as! StudentClassMapTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "studentClassHistoryCell", for: indexPath) as! StudentClassHistoryTableViewCell
+        let currentCheckin = self.checkinHistory[indexPath.row]
+
+        let currentDate = currentCheckin.createdAt!
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.amSymbol = "AM"
+        formatter.pmSymbol = "PM"
+        
+        formatter.dateFormat = "yyyy-MM-dd h:mm a"
+        
+        // Filling the text for date label
+        cell.checkinTimeLabel.text = formatter.string(from: currentDate)
         return cell
         
     }
@@ -91,19 +120,42 @@ extension StudentClassDetailsViewController {
         mapView?.setRegion(region, animated: true)
         
         // Drop a pin on the location of the classroom/lecture hall
-        pin.title = selectedClass!["building"] as! String
+        pin.title = selectedClass!["building"] as? String
         pin.coordinate = region.center
         mapView?.addAnnotation(pin)
     }
     
     func loadLabels() {
         // To load labels for class information
-        courseNameLabel.text = selectedClass!["name"] as! String
-        courseLocationLabel.text = selectedClass!["location"] as! String
+        courseNameLabel.text = selectedClass!["name"] as? String
+        courseLocationLabel.text = selectedClass!["location"] as? String
     }
     
-    
-
+    @objc func loadClassHistory() {
+        // To load check in histories for this particular class
+        // Step 1: Retrieve all check in entries that is associated with the student
+        // Step 2: Using a for loop, add all the entries that are related
+        //          to this class
+        checkinHistory = [PFObject]()
+        
+        // Step 1
+        let query = PFQuery(className: "checkin")
+        query.whereKey("student", equalTo: PFUser.current()!)
+        query.findObjectsInBackground { (results, error) in
+            if (results != nil) {
+                // Step 2
+                for r in results! {
+                    if (r["class"] as! PFObject).objectId == self.selectedClass!.objectId {
+                        self.checkinHistory.append(r)
+                    }
+                }
+                print("Successfully retrieved check in data from this class")
+            } else {
+                print("Cannot retrieve check in data")
+            }
+            self.tableView.refreshControl?.endRefreshing()
+        }
+    }
 }
 
 extension StudentClassDetailsViewController {
@@ -240,7 +292,7 @@ extension StudentClassDetailsViewController {
             } else {
                 print("check in cannot be saved")
             }
-            
+            self.loadClassHistory()
         }
         
     }

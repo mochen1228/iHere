@@ -26,13 +26,14 @@ class SignedInStudentsTableViewController: UITableViewController {
     
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBAction func onClearButton(_ sender: Any) {
+        // TODO:
         // For each student, clear check in from their history
+        
         // Clear all check in historied for this class
-        // Clear check in entries from Parse
         selectedClass!["checkins"] = [PFObject]()
         selectedClass?.saveInBackground()
         
-        print(checkins)
+        // Clear check in entries from Parse
         for checkin in checkins {
             checkin.deleteInBackground { (success, error) in
                 if error != nil {
@@ -41,6 +42,8 @@ class SignedInStudentsTableViewController: UITableViewController {
                 }
             }
         }
+        
+        // Clear local data for checkins
         checkins = [PFObject]()
         checkedInStudents = [PFUser]()
         tableView.reloadData()
@@ -53,6 +56,8 @@ class SignedInStudentsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.title = selectedClass?["number"] as! String
+        
+        // Loading refresh controls
         let checkinRefreshControl = UIRefreshControl()
         checkinRefreshControl.addTarget(self, action: #selector(loadCheckins), for: .valueChanged)
         tableView.refreshControl = checkinRefreshControl
@@ -121,6 +126,7 @@ extension SignedInStudentsTableViewController {
         
         formatter.dateFormat = "yyyy-MM-dd h:mm a"
         
+        // Filling the text for date label
         cell.checkedInTimeLabel.text = formatter.string(from: currentDate)
         return cell
     }
