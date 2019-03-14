@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440C2C99223A1D850080B5F7 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440C2C98223A1D850080B5F7 /* HistoryTableViewCell.swift */; };
 		444B1A3F223490F70003D81B /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B1A33223490F70003D81B /* YoshikoTextField.swift */; };
 		444B1A40223490F70003D81B /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B1A35223490F70003D81B /* HoshiTextField.swift */; };
 		444B1A41223490F70003D81B /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B1A36223490F70003D81B /* MinoruTextField.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		1E71EA60823D85D60B5F92E2 /* Pods-SignMeIn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignMeIn.release.xcconfig"; path = "Target Support Files/Pods-SignMeIn/Pods-SignMeIn.release.xcconfig"; sourceTree = "<group>"; };
+		440C2C98223A1D850080B5F7 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		444B1A33223490F70003D81B /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
 		444B1A34223490F70003D81B /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
 		444B1A35223490F70003D81B /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			children = (
 				A8ECF2F82234C133004F9380 /* StudentClassMapTableViewCell.swift */,
 				A8ECF2EE2234A4F1004F9380 /* StudentClassTableViewCell.swift */,
+				440C2C98223A1D850080B5F7 /* HistoryTableViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				A8CF849C2225F5CA00F3094F /* WelcomeViewController.swift in Sources */,
 				A8ECF2F92234C133004F9380 /* StudentClassMapTableViewCell.swift in Sources */,
 				A8ECF2E8222FB35E004F9380 /* LocationSearchTable.swift in Sources */,
+				440C2C99223A1D850080B5F7 /* HistoryTableViewCell.swift in Sources */,
 				A8ECF2EF2234A4F1004F9380 /* StudentClassTableViewCell.swift in Sources */,
 				A8CF84A222263EE700F3094F /* FinishingUpViewController.swift in Sources */,
 				A8ECF2E3222F5A67004F9380 /* InstructorAddClassViewController.swift in Sources */,
