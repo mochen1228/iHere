@@ -15,7 +15,10 @@
 // *************************
 
 // TODO:
-// 1. Add button for instructors to change sign in code
+// 1. Change the TVC to a VC and show the instructor
+//      1.1 Class info and check in code
+//      1.2 The option to change check in code
+//      1.2 The option to change class info (Optional)
 // 2. Add VC to the second tab for users to change their first and last name
 // 3. Move logout button to the second tab bar
 // 4. Add a few more alerts to check in page to propt the user what's wrong
