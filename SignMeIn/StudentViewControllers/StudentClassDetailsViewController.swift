@@ -54,6 +54,7 @@ class StudentClassDetailsViewController: UIViewController {
         loadLocationManager()
         loadLabels()
         roundedCheckInButton.layer.cornerRadius = 15
+        
     }
 }
 
@@ -166,17 +167,23 @@ extension StudentClassDetailsViewController {
         // Calculate the distance between the class room and user in METERS
         // If the distance is greater than the threshold, it will return false
         // Threshold have to be in double, and the unit is METERS
-        let coordinate1 = CLLocation(latitude: (currentLocation?.coordinate.latitude)!,
-                                     longitude: (currentLocation?.coordinate.longitude)!)
-        let coordinate2 = CLLocation(latitude: Double(selectedClass!["latitute"] as! String)!,
-                                     longitude: Double(selectedClass!["longitute"] as! String)!)
-        
-        let distanceInMeters = coordinate2.distance(from: coordinate1)
-        print(distanceInMeters)
-        if distanceInMeters > threshold {
+        if currentLocation != nil {
+            let coordinate1 = CLLocation(latitude: (currentLocation?.coordinate.latitude)!,
+                                         longitude: (currentLocation?.coordinate.longitude)!)
+            let coordinate2 = CLLocation(latitude: Double(selectedClass!["latitute"] as! String)!,
+                                         longitude: Double(selectedClass!["longitute"] as! String)!)
+            
+            let distanceInMeters = coordinate2.distance(from: coordinate1)
+            print(distanceInMeters)
+            if distanceInMeters > threshold {
+                return false
+            }
+            return true
+        } else {
+            print("whattttt")
             return false
         }
-        return true
+        
     }
 }
 
@@ -202,26 +209,39 @@ extension StudentClassDetailsViewController {
     func saveCheckInSession() {
         // Creating the "checkin" class to store user check in sessions
         //      to both the current user and the class
-        var checkin = PFObject(className: "checkin")
+        
+        // Save checkin object
+        //      Save checkin object pointer to selected class
+        //          Save checkin object pointer to current user
+        let checkin = PFObject(className: "checkin")
         checkin["class"] = self.selectedClass
         checkin["student"] = PFUser.current()
-        // Add to class
-        self.selectedClass!.add(checkin, forKey: "checkins")
-        self.selectedClass!.saveInBackground { (success, error) in
+        checkin.saveInBackground { (success, error) in
             if success {
-                print("check in successfully saved to class")
+                print("check in successfully saved")
+                // Add to class
+                self.selectedClass!.add(checkin, forKey: "checkins")
+                self.selectedClass!.saveInBackground { (success, error) in
+                    if success {
+                        print("check in successfully saved to class")
+                        // Add to student
+                        PFUser.current()?.add(checkin, forKey: "checkins")
+                        PFUser.current()?.saveInBackground{ (success, error) in
+                            if success {
+                                print("check in successfully saved to user")
+                            } else {
+                                print("check in not saved to yser")
+                            }
+                        }
+                    } else {
+                        print("check in not saved to class")
+                    }
+                }
             } else {
-                print("check in not saved to class")
+                print("check in cannot be saved")
             }
+            
         }
-        // Add to user
-        PFUser.current()?.add(checkin, forKey: "checkins")
-        PFUser.current()?.saveInBackground{ (success, error) in
-            if success {
-                print("check in successfully saved to user")
-            } else {
-                print("check in not saved to yser")
-            }
-        }
+        
     }
 }
