@@ -65,6 +65,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6qj-CQ-YNN">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.98431372549999996" green="0.86666666670000003" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="k4Z-Te-k3V" kind="relationship" relationship="rootViewController" id="gEi-Ah-Cfr"/>
@@ -215,16 +216,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuO-Mi-ghl">
-                                                    <rect key="frame" x="16" y="17" width="343" height="23.666666666666671"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="16" y="16" width="343" height="25.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="BuO-Mi-ghl" firstAttribute="leading" secondItem="fli-zO-eb4" secondAttribute="leading" constant="16" id="Hh9-cR-O7a"/>
-                                                <constraint firstAttribute="bottom" secondItem="BuO-Mi-ghl" secondAttribute="bottom" constant="15" id="SVB-Gb-IID"/>
-                                                <constraint firstItem="BuO-Mi-ghl" firstAttribute="top" secondItem="fli-zO-eb4" secondAttribute="top" constant="17" id="l7y-Ad-m4K"/>
+                                                <constraint firstAttribute="bottom" secondItem="BuO-Mi-ghl" secondAttribute="bottom" constant="14" id="SVB-Gb-IID"/>
+                                                <constraint firstItem="BuO-Mi-ghl" firstAttribute="top" secondItem="fli-zO-eb4" secondAttribute="top" constant="16" id="l7y-Ad-m4K"/>
                                                 <constraint firstAttribute="trailing" secondItem="BuO-Mi-ghl" secondAttribute="trailing" constant="16" id="rLs-Cn-Siu"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -279,7 +280,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="    Check In History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyi-59-P1r">
                                 <rect key="frame" x="0.0" y="363" width="375" height="26"/>
-                                <color key="backgroundColor" red="0.95675364847715738" green="0.90894099710908804" blue="0.5016432085413276" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="Rrx-YC-EC5"/>
                                     <constraint firstAttribute="height" constant="26" id="YAb-Hl-5oR"/>
@@ -338,6 +339,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aWU-H2-0Id">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.98431372549999996" green="0.86666666670000003" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

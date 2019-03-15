@@ -36,7 +36,7 @@ class InstructorClassesTableViewController: UITableViewController, UIApplication
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectedClassSegue" {
-            if let destinationVC = segue.destination as? SignedInStudentsTableViewController {
+            if let destinationVC = segue.destination as? SignedInStudentsViewController {
                 destinationVC.selectedClass = selectedClass
                 selectedClass = nil
             }
@@ -69,7 +69,13 @@ extension InstructorClassesTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return classes.count
+        if classes.count > 0 {
+            tableView.restore()
+            return classes.count
+        } else {
+            tableView.setEmptyMessage("You haven't created any classes")
+            return 0
+        }
     }
     
     

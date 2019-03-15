@@ -78,7 +78,13 @@ extension StudentClassesViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return classes.count
+        if classes.count > 0 {
+            tableView.restore()
+            return classes.count
+        } else {
+            tableView.setEmptyMessage("There are no classes")
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -86,11 +92,22 @@ extension StudentClassesViewController: UITableViewDelegate, UITableViewDataSour
                                                  for: indexPath) as! StudentClassTableViewCell
         let classData = classes[indexPath.row]
         
-        cell.courseNumberLabel.text = classData["number"] as! String
-        cell.courseNameLabel.text = classData["name"] as! String
-        cell.courseLocationLabel.text = classData["location"] as! String
-        cell.courseTimeLabel.text = classData["time"] as! String
-        cell.courseInstructorLabel.text = "Chen Mo"
+        cell.courseNumberLabel.text = classData["number"] as? String
+        cell.courseNameLabel.text = classData["name"] as? String
+        cell.courseLocationLabel.text = classData["location"] as? String
+        cell.courseTimeLabel.text = classData["time"] as? String
+        
+        // Retrieve instructor name
+        let query = PFQuery(className: "_User")
+        query.whereKey("objectId", equalTo: classData["instructorId"])
+        query.findObjectsInBackground { (result, error) in
+            if result != nil {
+                let instructor = result?.first!
+                cell.courseInstructorLabel.text = (instructor!["firstname"] as! String) + " " + (instructor!["lastname"] as! String)
+            } else {
+                print("Error retrieving instructor information")
+            }
+        }
         
         return cell
     }
@@ -103,3 +120,24 @@ extension StudentClassesViewController: UITableViewDelegate, UITableViewDataSour
     }
 }
 
+extension UITableView {
+    // This extension is to make the table view display a label when it
+    //      is empty.
+    func setEmptyMessage(_ message: String) {
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+        messageLabel.text = message
+        messageLabel.textColor = .black
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = .center;
+        // messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
+        messageLabel.sizeToFit()
+        
+        self.backgroundView = messageLabel;
+        self.separatorStyle = .none;
+    }
+    
+    func restore() {
+        self.backgroundView = nil
+        self.separatorStyle = .singleLine
+    }
+}

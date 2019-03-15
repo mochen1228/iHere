@@ -61,9 +61,7 @@ class StudentClassDetailsViewController: UIViewController {
         tableView.tableFooterView = UIView()
         historyRefreshControl.addTarget(self, action: #selector(loadClassHistory), for: .valueChanged)
         tableView.refreshControl = historyRefreshControl
-
-
-
+        
         loadMap()
         loadLocationManager()
         loadLabels()
@@ -82,12 +80,22 @@ extension StudentClassDetailsViewController: UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return checkinHistory.count
+        if checkinHistory.count > 0 {
+            tableView.restore()
+            return checkinHistory.count
+        } else {
+            tableView.setEmptyMessage("You have no check in history")
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentClassHistoryCell", for: indexPath) as! StudentClassHistoryTableViewCell
-        let currentCheckin = self.checkinHistory[indexPath.row]
+        
+        // To reverse the check in entries
+        // The most recent entries will display at the top
+        let totalEntries = checkinHistory.count
+        let currentCheckin = self.checkinHistory[totalEntries - indexPath.row - 1]
 
         let currentDate = currentCheckin.createdAt!
         let formatter = DateFormatter()
