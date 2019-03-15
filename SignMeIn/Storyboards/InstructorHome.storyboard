@@ -714,7 +714,7 @@
         <scene sceneID="aAy-1F-OYy">
             <objects>
                 <navigationController id="PaI-rw-kBb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="b4r-XO-lXe"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="icons8-user-96" id="b4r-XO-lXe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gXJ-8L-p5b">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -732,7 +732,7 @@
         <scene sceneID="iBO-5A-FDs">
             <objects>
                 <navigationController id="X0t-WD-kb5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Classes" id="AMK-MK-mCh"/>
+                    <tabBarItem key="tabBarItem" title="Classes" image="icons8-literature-90" id="AMK-MK-mCh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mlg-Qv-nfC">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -748,6 +748,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-literature-90" width="30" height="30"/>
+        <image name="icons8-user-96" width="32" height="32"/>
         <image name="placeholder" width="1500" height="1500"/>
     </resources>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
