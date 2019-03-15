@@ -61,7 +61,7 @@
         <scene sceneID="acj-Vu-EFI">
             <objects>
                 <navigationController id="o4i-K6-t4f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="DlF-Jr-VpF"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="icons8-user-96" id="DlF-Jr-VpF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6qj-CQ-YNN">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -334,7 +334,9 @@
         <scene sceneID="89H-eS-PLJ">
             <objects>
                 <navigationController title="Classes" automaticallyAdjustsScrollViewInsets="NO" id="Ytb-Qc-t7o" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Dpt-yG-VSf"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="icons8-literature-90" id="Dpt-yG-VSf">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aWU-H2-0Id">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -352,6 +354,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-literature-90" width="30" height="30"/>
+        <image name="icons8-user-96" width="32" height="32"/>
         <image name="placeholder" width="1500" height="1500"/>
     </resources>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

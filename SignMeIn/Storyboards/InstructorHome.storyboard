@@ -137,22 +137,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCc-56-7BB">
-                                <rect key="frame" x="20" y="548" width="335" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.86666666670000003" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Vs4-fC-wk3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Pick GPS Location"/>
-                                <connections>
-                                    <action selector="onPickLocationButton:" destination="3iI-Dt-oJ1" eventType="touchUpInside" id="rSw-9i-hhU"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Course Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1t5-Ep-u1V" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
-                                <rect key="frame" x="63.000000000000007" y="193" width="105.66666666666669" height="50"/>
+                                <rect key="frame" x="205" y="108" width="150" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="2Tr-3e-acv"/>
+                                    <constraint firstAttribute="width" constant="150" id="DNq-7J-R7K"/>
+                                    <constraint firstAttribute="height" constant="50" id="bnp-gG-gyI"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -173,9 +162,12 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Course Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SSy-Ha-NLc" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
-                                <rect key="frame" x="63" y="118" width="249" height="50"/>
+                                <rect key="frame" x="20" y="108" width="150" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="NDm-LW-2BZ"/>
                                     <constraint firstAttribute="height" constant="50" id="bpV-mQ-TfZ"/>
+                                    <constraint firstAttribute="width" constant="150" id="ee5-wi-sve"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="gOL-C3-Fpb"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -196,8 +188,10 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Class Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MCI-6M-2Ey" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
-                                <rect key="frame" x="213.66666666666666" y="193" width="98.333333333333343" height="50"/>
+                                <rect key="frame" x="205" y="168" width="150" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="1SR-Ue-xh0"/>
+                                    <constraint firstAttribute="width" constant="150" id="elV-3i-Bkt"/>
                                     <constraint firstAttribute="height" constant="50" id="jdv-HT-j2X"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -218,10 +212,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Meeting Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ajw-l8-mA6" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
-                                <rect key="frame" x="63" y="260" width="249" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Meeting Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ajw-l8-mA6" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
+                                <rect key="frame" x="20" y="168" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1n3-bb-qzk"/>
+                                    <constraint firstAttribute="width" constant="150" id="Ry6-Aa-mWW"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="xcl-zE-UhE"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -241,11 +237,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Latttute" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hW5-r0-VKk" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
-                                <rect key="frame" x="63" y="478" width="120" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Latttute" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hW5-r0-VKk" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
+                                <rect key="frame" x="20" y="288" width="120" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="4aI-Hb-qrO"/>
                                     <constraint firstAttribute="height" constant="50" id="Ice-GX-woD"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="JEc-gC-vjB"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="rqa-Y7-a9f"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -265,11 +263,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Longitute" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pc7-8r-DGs" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
-                                <rect key="frame" x="192" y="478" width="120" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Longitute" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pc7-8r-DGs" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
+                                <rect key="frame" x="235" y="288" width="120" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="2Oc-fy-Q0a"/>
                                     <constraint firstAttribute="height" constant="50" id="2Zx-xU-oaa"/>
                                     <constraint firstAttribute="width" constant="120" id="4Sg-ak-3Qe"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="tJI-Xn-sSk"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -289,9 +289,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sign In Code (Default: code)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p96-OD-3x9" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
-                                <rect key="frame" x="63" y="318" width="249" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sign In Code (Default: code)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p96-OD-3x9" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
+                                <rect key="frame" x="20" y="228" width="335" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="IaG-nL-4pL"/>
                                     <constraint firstAttribute="height" constant="50" id="xHI-sl-mnH"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -312,30 +313,40 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCc-56-7BB">
+                                <rect key="frame" x="40" y="353" width="295" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.86666666670000003" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Sd9-9j-ESd"/>
+                                    <constraint firstAttribute="height" constant="50" id="Vs4-fC-wk3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Pick GPS Location"/>
+                                <connections>
+                                    <action selector="onPickLocationButton:" destination="3iI-Dt-oJ1" eventType="touchUpInside" id="rSw-9i-hhU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="SSy-Ha-NLc" secondAttribute="trailing" constant="63" id="1GR-eu-ADt"/>
-                            <constraint firstItem="1t5-Ep-u1V" firstAttribute="top" secondItem="SSy-Ha-NLc" secondAttribute="bottom" constant="25" id="4Oh-II-I5M"/>
-                            <constraint firstItem="p96-OD-3x9" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="63" id="8AZ-Wb-Asx"/>
-                            <constraint firstItem="hW5-r0-VKk" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="63" id="9gT-GT-ejF"/>
-                            <constraint firstItem="MCI-6M-2Ey" firstAttribute="leading" secondItem="1t5-Ep-u1V" secondAttribute="trailing" constant="45" id="AGz-4f-UTv"/>
-                            <constraint firstItem="gCc-56-7BB" firstAttribute="top" secondItem="hW5-r0-VKk" secondAttribute="bottom" constant="20" id="Ap4-Qc-Wlo"/>
-                            <constraint firstItem="gCc-56-7BB" firstAttribute="top" secondItem="hW5-r0-VKk" secondAttribute="bottom" constant="20" id="DCa-nE-Fou"/>
-                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="ajw-l8-mA6" secondAttribute="trailing" constant="63" id="DK0-vT-UBQ"/>
-                            <constraint firstItem="SSy-Ha-NLc" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="63" id="EPG-0z-g7P"/>
-                            <constraint firstItem="1t5-Ep-u1V" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="63" id="F6r-Kx-M6B"/>
-                            <constraint firstItem="ajw-l8-mA6" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="63" id="J0M-Z1-5YN"/>
-                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="gCc-56-7BB" secondAttribute="trailing" constant="125" id="NFH-P2-INo"/>
-                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="p96-OD-3x9" secondAttribute="trailing" constant="63" id="ORd-Oc-oQu"/>
-                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="MCI-6M-2Ey" secondAttribute="trailing" constant="63" id="PIK-ij-cDH"/>
-                            <constraint firstItem="gCc-56-7BB" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="125" id="WiQ-Tz-dyY"/>
-                            <constraint firstItem="SSy-Ha-NLc" firstAttribute="top" secondItem="KFv-KC-Ocz" secondAttribute="top" constant="30" id="hV6-P0-ZcJ"/>
-                            <constraint firstItem="Pc7-8r-DGs" firstAttribute="leading" relation="lessThanOrEqual" secondItem="hW5-r0-VKk" secondAttribute="trailing" priority="250" constant="9" id="lqy-yh-rhg"/>
-                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="gCc-56-7BB" secondAttribute="trailing" constant="20" id="oBw-xi-R5M"/>
-                            <constraint firstItem="gCc-56-7BB" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="20" id="oov-nK-YCB"/>
-                            <constraint firstItem="MCI-6M-2Ey" firstAttribute="top" secondItem="SSy-Ha-NLc" secondAttribute="bottom" constant="25" id="tni-VK-YbX"/>
-                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="Pc7-8r-DGs" secondAttribute="trailing" constant="63" id="yxO-UG-oqP"/>
+                            <constraint firstItem="hW5-r0-VKk" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="20" id="0of-MY-k56"/>
+                            <constraint firstItem="gCc-56-7BB" firstAttribute="top" secondItem="hW5-r0-VKk" secondAttribute="bottom" constant="15" id="B2z-5y-11Y"/>
+                            <constraint firstItem="p96-OD-3x9" firstAttribute="top" secondItem="MCI-6M-2Ey" secondAttribute="bottom" constant="10" id="DI8-SC-3yM"/>
+                            <constraint firstItem="ajw-l8-mA6" firstAttribute="top" secondItem="1t5-Ep-u1V" secondAttribute="bottom" constant="10" id="KLo-I0-zEi"/>
+                            <constraint firstItem="Pc7-8r-DGs" firstAttribute="top" secondItem="p96-OD-3x9" secondAttribute="bottom" constant="10" id="Mhf-9K-Zcu"/>
+                            <constraint firstItem="p96-OD-3x9" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="20" id="RFG-G7-VmZ"/>
+                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="p96-OD-3x9" secondAttribute="trailing" constant="20" id="Vuy-Ii-GYQ"/>
+                            <constraint firstItem="SSy-Ha-NLc" firstAttribute="top" secondItem="KFv-KC-Ocz" secondAttribute="top" constant="20" id="XlV-re-sNP"/>
+                            <constraint firstItem="1t5-Ep-u1V" firstAttribute="top" secondItem="KFv-KC-Ocz" secondAttribute="top" constant="20" id="Xv9-X2-ZY3"/>
+                            <constraint firstItem="hW5-r0-VKk" firstAttribute="top" secondItem="p96-OD-3x9" secondAttribute="bottom" constant="10" id="ajh-Z4-T6c"/>
+                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="gCc-56-7BB" secondAttribute="trailing" constant="40" id="cWS-oq-1iw"/>
+                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="Pc7-8r-DGs" secondAttribute="trailing" constant="20" id="f5W-85-vrj"/>
+                            <constraint firstItem="MCI-6M-2Ey" firstAttribute="top" secondItem="1t5-Ep-u1V" secondAttribute="bottom" constant="10" id="gdd-gn-jic"/>
+                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="1t5-Ep-u1V" secondAttribute="trailing" constant="20" id="o32-Bs-zzk"/>
+                            <constraint firstItem="gCc-56-7BB" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="40" id="sj1-Hg-gFl"/>
+                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="MCI-6M-2Ey" secondAttribute="trailing" constant="20" id="tB6-3c-42a"/>
+                            <constraint firstItem="SSy-Ha-NLc" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="20" id="trs-iM-wUo"/>
+                            <constraint firstItem="ajw-l8-mA6" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="20" id="vcK-Fj-XX3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KFv-KC-Ocz"/>
                     </view>
@@ -361,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="soB-kp-Gag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="-814"/>
+            <point key="canvasLocation" x="1712.8" y="-814.28571428571433"/>
         </scene>
         <!--Add Location View Controller-->
         <scene sceneID="r7c-3n-spL">
@@ -375,11 +386,12 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPo-y0-VJe">
-                                <rect key="frame" x="20" y="659" width="335" height="50"/>
+                                <rect key="frame" x="40" y="659" width="295" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WFR-4J-a20"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Comfirm Location">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -390,12 +402,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="wPo-y0-VJe" firstAttribute="leading" secondItem="h27-se-4zc" secondAttribute="leading" constant="40" id="Din-mP-9C9"/>
                             <constraint firstItem="IcT-2a-CNW" firstAttribute="top" secondItem="h27-se-4zc" secondAttribute="top" id="FsU-Uh-JjC"/>
                             <constraint firstItem="IcT-2a-CNW" firstAttribute="leading" secondItem="h27-se-4zc" secondAttribute="leading" id="MMn-Pl-kvw"/>
                             <constraint firstItem="IcT-2a-CNW" firstAttribute="trailing" secondItem="h27-se-4zc" secondAttribute="trailing" id="ZNX-gb-vny"/>
-                            <constraint firstItem="wPo-y0-VJe" firstAttribute="leading" secondItem="h27-se-4zc" secondAttribute="leading" constant="20" id="kjU-lp-zKQ"/>
+                            <constraint firstItem="h27-se-4zc" firstAttribute="trailing" secondItem="wPo-y0-VJe" secondAttribute="trailing" constant="40" id="cSp-hm-oQ3"/>
                             <constraint firstItem="IcT-2a-CNW" firstAttribute="bottom" secondItem="h27-se-4zc" secondAttribute="bottom" id="nPc-cx-U7r"/>
-                            <constraint firstItem="h27-se-4zc" firstAttribute="trailing" secondItem="wPo-y0-VJe" secondAttribute="trailing" constant="20" id="vgB-11-Zjg"/>
                             <constraint firstItem="h27-se-4zc" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wPo-y0-VJe" secondAttribute="bottom" constant="20" id="xLL-7j-O6S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h27-se-4zc"/>
@@ -668,7 +680,7 @@
         <scene sceneID="aAy-1F-OYy">
             <objects>
                 <navigationController id="PaI-rw-kBb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="b4r-XO-lXe"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="icons8-user-96" id="b4r-XO-lXe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gXJ-8L-p5b">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -801,7 +813,7 @@
         <scene sceneID="iBO-5A-FDs">
             <objects>
                 <navigationController id="X0t-WD-kb5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Classes" id="AMK-MK-mCh"/>
+                    <tabBarItem key="tabBarItem" title="Classes" image="icons8-literature-90" id="AMK-MK-mCh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mlg-Qv-nfC">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -817,6 +829,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-literature-90" width="30" height="30"/>
+        <image name="icons8-user-96" width="32" height="32"/>
         <image name="placeholder" width="1500" height="1500"/>
     </resources>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
