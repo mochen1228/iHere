@@ -29,8 +29,9 @@ class SignedInStudentsViewController: UIViewController {
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var checkInCodeLabel: UILabel!
     
+    @IBOutlet weak var changeCodeButton: UIButton!
     @IBAction func onChangeCodeButton(_ sender: Any) {
-        
+        showUpdateCodeAlert()
     }
     
     @IBAction func onClearButton(_ sender: Any) {
@@ -64,7 +65,8 @@ class SignedInStudentsViewController: UIViewController {
         print(selectedClass)
         super.viewDidLoad()
         navigationBar.title = selectedClass?["number"] as! String
-        
+        changeCodeButton.layer.cornerRadius = 15
+        loadCheckInCodeLabel()
         // Loading table view
         tableView.delegate = self
         tableView.dataSource = self
@@ -74,7 +76,9 @@ class SignedInStudentsViewController: UIViewController {
         tableView.refreshControl = checkinRefreshControl
         
     }
-    
+}
+
+extension SignedInStudentsViewController {
     @objc func loadCheckins() {
         // To load all the students that have checked in to this class
         // There are two steps:
@@ -105,6 +109,27 @@ class SignedInStudentsViewController: UIViewController {
             }
         }
         self.tableView.refreshControl?.endRefreshing()
+    }
+    
+    func updateCheckInCode(with newCode: String) -> Void {
+        // Save the new check in code to Parse and update the label that
+        //      displays the check in code
+        let oldCheckInCode = selectedClass!["code"]
+        selectedClass!["code"] = newCode
+        selectedClass?.saveInBackground {(success, error) in
+            if success {
+                print("Updating code success")
+                self.loadCheckInCodeLabel()
+            } else {
+                print("Error in updating the sign in code")
+                print("Restoring the old check in code")
+                self.selectedClass!["code"] = oldCheckInCode
+            }
+        }
+    }
+    
+    func loadCheckInCodeLabel() {
+        checkInCodeLabel.text = selectedClass!["code"] as? String
     }
 }
 
@@ -150,34 +175,29 @@ extension SignedInStudentsViewController: UITableViewDelegate, UITableViewDataSo
 }
 
 extension SignedInStudentsViewController {
-    func showCheckInCodeAlert() {
+    func showUpdateCodeAlert() {
         // This will pop up a alert to prompt the user to enter a check in code
         let appearance = SCLAlertView.SCLAppearance(
             showCloseButton: false, showCircularIcon: false, shouldAutoDismiss: false
         )
         let alert = SCLAlertView(appearance: appearance)
         let code = alert.addTextField("Enter code here...")
-        alert.addButton("Check In", backgroundColor: UIColor.yellow, textColor: UIColor.black) {
+        let color = UIColor(red: 247.0/255.0, green: 224.0/255.0, blue: 144.0/255.0, alpha: 1.0)
+        alert.addButton("Confirm", backgroundColor: color, textColor: UIColor.black) {
             print("Text value: \(String(describing: code.text))")
-            // ATTENTION:
-            // This is the part that checks if the user entered code is the
-            //      same code as the instructor provided code
-            //      if not match, the window won't dismiss
-            // TODO:
-            // Find a way to tell the user that the code is wrong
-//            if self.isLegalCheckInCode(code.text!) {
-//                self.saveCheckInSession()
-//                // Dismiss the window
-//                alert.hideView()
-//            }
+            if code.text != nil {
+                alert.hideView()
+                // Update the class check in code
+                self.updateCheckInCode(with: code.text!)
+            }
         }
         alert.addButton("Cancel", backgroundColor: UIColor.black,
                         textColor: UIColor.white) {
                             alert.hideView()
                             print("Cancel tapped")
         }
-        alert.showEdit("Verify Check In Code",
-                       subTitle: "Your instructor has requested a check in code",
-                       colorStyle: 0xffff00)
+        alert.showEdit("New Check In Code",
+                       subTitle: "This will update the code required for all students",
+                       colorStyle: 0xf7e090)
     }
 }

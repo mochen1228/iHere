@@ -40,7 +40,7 @@ class StudentClassDetailsViewController: UIViewController {
     }
     
     @IBAction func onCheckInButton(_ sender: Any) {
-        if isLegalCheckInLocation(within: 3000.0) {
+        if isLegalCheckInLocation(within: 50.0) {
             showCheckInCodeAlert()
         } else {
             showIllegalLocationAlert()
@@ -175,7 +175,9 @@ extension StudentClassDetailsViewController {
         )
         let alert = SCLAlertView(appearance: appearance)
         let code = alert.addTextField("Enter code here...")
-        alert.addButton("Check In", backgroundColor: UIColor.yellow, textColor: UIColor.black) {
+        // App theme yellow color
+        let color = UIColor(red: 247.0/255.0, green: 224.0/255.0, blue: 144.0/255.0, alpha: 1.0)
+        alert.addButton("Check In", backgroundColor: color, textColor: UIColor.black) {
             print("Text value: \(String(describing: code.text))")
             // ATTENTION:
             // This is the part that checks if the user entered code is the
@@ -196,7 +198,7 @@ extension StudentClassDetailsViewController {
         }
         alert.showEdit("Verify Check In Code",
                        subTitle: "Your instructor has requested a check in code",
-                       colorStyle: 0xffff00)
+                       colorStyle: 0xf7e090)
     }
     
     func showIllegalLocationAlert() {
@@ -205,7 +207,8 @@ extension StudentClassDetailsViewController {
             showCloseButton: false, showCircularIcon: false
         )
         let alert = SCLAlertView(appearance: appearance)
-        alert.addButton("Fine", backgroundColor: UIColor(red: 254.0/255.0, green: 92.0/255.0, blue: 71.0/255.0, alpha: 1.0), textColor: UIColor.white) {
+        // Dark red color
+        alert.addButton("Fine", backgroundColor: UIColor(red: 139/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0), textColor: UIColor.white) {
             alert.hideView()
             print("Cancel tapped")
         }
@@ -217,16 +220,27 @@ extension StudentClassDetailsViewController {
 extension StudentClassDetailsViewController {
     // Extensions for verifications
     func isLegalCheckInCode(_ code: String) -> Bool {
-        if code == selectedClass!["code"] as! String {
-            return true
-        }
-        return false
+        // Fetch the code from Parse server and verify
+        // NOTE:
+        // The previous approach that we fetch the code from locally stored "selectedClass"
+        //      will always give us the code at the time when user entered this page
+        // If the instructor updated the code after the user entered this page, this function
+        //      will compare with the old check in code
+        
+        let query = PFQuery(className: "Class")
+        query.whereKey("objectId", equalTo: selectedClass?.objectId as! String)
+        
+        // ATTENTION:
+        // This will block the main thread if there's no internet connection
+        let results = try? query.findObjects()
+        return code == (results!.first!["code"] as! String)
     }
     
     func isLegalCheckInLocation(within threshold: Double) -> Bool {
         // Calculate the distance between the class room and user in METERS
         // If the distance is greater than the threshold, it will return false
         // Threshold have to be in double, and the unit is METERS
+        // https://en.wikipedia.org/wiki/Metre
         if currentLocation != nil {
             let coordinate1 = CLLocation(latitude: (currentLocation?.coordinate.latitude)!,
                                          longitude: (currentLocation?.coordinate.longitude)!)
@@ -234,13 +248,12 @@ extension StudentClassDetailsViewController {
                                          longitude: Double(selectedClass!["longitute"] as! String)!)
             
             let distanceInMeters = coordinate2.distance(from: coordinate1)
-            print(distanceInMeters)
+            print("Current distance from the user to the class is:", distanceInMeters, "meters")
             if distanceInMeters > threshold {
                 return false
             }
             return true
         } else {
-            print("whattttt")
             return false
         }
         

@@ -280,7 +280,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="    Check In History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyi-59-P1r">
                                 <rect key="frame" x="0.0" y="363" width="375" height="26"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.87362805870000004" green="0.87362805870000004" blue="0.87362805870000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="Rrx-YC-EC5"/>
                                     <constraint firstAttribute="height" constant="26" id="YAb-Hl-5oR"/>

@@ -503,7 +503,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="    Check In History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnx-xl-KTf">
                                 <rect key="frame" x="0.0" y="139" width="375" height="26"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.87362805871188942" green="0.87362805871188942" blue="0.87362805871188942" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Dnx-xl-KTf" secondAttribute="height" multiplier="125:4" id="Z2Z-JU-VWd"/>
                                     <constraint firstAttribute="width" constant="375" id="aBO-Uy-c6O"/>
@@ -577,10 +577,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nU3-y4-NiM">
-                                <rect key="frame" x="287" y="99" width="72" height="30"/>
+                                <rect key="frame" x="284" y="99" width="75" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="YFr-ij-5G2"/>
+                                    <constraint firstAttribute="width" constant="75" id="YFr-ij-5G2"/>
+                                    <constraint firstAttribute="height" constant="30" id="kmb-98-IU5"/>
                                 </constraints>
                                 <state key="normal" title="Change">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -617,6 +618,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="changeCodeButton" destination="nU3-y4-NiM" id="m1m-PN-p9L"/>
                         <outlet property="checkInCodeLabel" destination="e1T-Ek-bF5" id="JYF-fx-3xc"/>
                         <outlet property="navigationBar" destination="OHp-P8-OIQ" id="GUb-16-qvq"/>
                         <outlet property="tableView" destination="23v-TQ-o8J" id="eem-Uu-fwP"/>
