@@ -19,6 +19,8 @@
 		444B1A48223490F70003D81B /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B1A3D223490F70003D81B /* IsaoTextField.swift */; };
 		A8004814223A1E810012A889 /* StudentClassHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8004813223A1E810012A889 /* StudentClassHistoryTableViewCell.swift */; };
 		A8004818223B1BFF0012A889 /* SignedInStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8004817223B1BFF0012A889 /* SignedInStudentsViewController.swift */; };
+		A800481A223B563F0012A889 /* StudentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8004819223B563F0012A889 /* StudentProfileViewController.swift */; };
+		A800481C223B56620012A889 /* InstructorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A800481B223B56620012A889 /* InstructorProfileViewController.swift */; };
 		A864FDBE223757C500E6B102 /* InstructorCheckInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A864FDBD223757C500E6B102 /* InstructorCheckInTableViewCell.swift */; };
 		A86A856F2225F34700C4383A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A856E2225F34700C4383A /* AppDelegate.swift */; };
 		A86A85742225F34700C4383A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A86A85722225F34700C4383A /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 		444B1A3E223490F70003D81B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8004813223A1E810012A889 /* StudentClassHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClassHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		A8004817223B1BFF0012A889 /* SignedInStudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInStudentsViewController.swift; sourceTree = "<group>"; };
+		A8004819223B563F0012A889 /* StudentProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileViewController.swift; sourceTree = "<group>"; };
+		A800481B223B56620012A889 /* InstructorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorProfileViewController.swift; sourceTree = "<group>"; };
 		A810CFFF2238B6B0004C0856 /* SignMeIn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SignMeIn.entitlements; sourceTree = "<group>"; };
 		A864FDBD223757C500E6B102 /* InstructorCheckInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorCheckInTableViewCell.swift; sourceTree = "<group>"; };
 		A86A856B2225F34700C4383A /* SignMeIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignMeIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +194,7 @@
 		A8ECF2DC222EFC52004F9380 /* StudentViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A8004819223B563F0012A889 /* StudentProfileViewController.swift */,
 				A8ECF2F62234BE4B004F9380 /* StudentClassDetailsViewController.swift */,
 				A8ECF2F22234AF97004F9380 /* StudentClassesViewController.swift */,
 				A8ECF2ED2234A49C004F9380 /* Models */,
@@ -202,6 +207,7 @@
 			children = (
 				A8ECF2E6222FB348004F9380 /* Models */,
 				A8ECF2EB22349A1F004F9380 /* SignedInStudentsTableViewController.swift */,
+				A800481B223B56620012A889 /* InstructorProfileViewController.swift */,
 				A8004817223B1BFF0012A889 /* SignedInStudentsViewController.swift */,
 				A8ECF2E4222F60FB004F9380 /* AddLocationViewController.swift */,
 				A8ECF2E2222F5A67004F9380 /* InstructorAddClassViewController.swift */,
@@ -379,6 +385,7 @@
 				444B1A41223490F70003D81B /* MinoruTextField.swift in Sources */,
 				A8CF849C2225F5CA00F3094F /* WelcomeViewController.swift in Sources */,
 				A8ECF2E8222FB35E004F9380 /* LocationSearchTable.swift in Sources */,
+				A800481A223B563F0012A889 /* StudentProfileViewController.swift in Sources */,
 				A8ECF2EF2234A4F1004F9380 /* StudentClassTableViewCell.swift in Sources */,
 				A8CF84A222263EE700F3094F /* FinishingUpViewController.swift in Sources */,
 				A8ECF2E3222F5A67004F9380 /* InstructorAddClassViewController.swift in Sources */,
@@ -386,6 +393,7 @@
 				A8ECF2F72234BE4B004F9380 /* StudentClassDetailsViewController.swift in Sources */,
 				A8004814223A1E810012A889 /* StudentClassHistoryTableViewCell.swift in Sources */,
 				444B1A46223490F70003D81B /* KaedeTextField.swift in Sources */,
+				A800481C223B56620012A889 /* InstructorProfileViewController.swift in Sources */,
 				444B1A47223490F70003D81B /* AkiraTextField.swift in Sources */,
 				A8004818223B1BFF0012A889 /* SignedInStudentsViewController.swift in Sources */,
 				444B1A44223490F70003D81B /* JiroTextField.swift in Sources */,

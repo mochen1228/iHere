@@ -25,14 +25,14 @@ class InstructorClassesTableViewController: UITableViewController, UIApplication
         loadClasses()
     }
 
-    @IBAction func onLogoutButton(_ sender: Any) {
-        // Logout and segue to the initial VC
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController = main.instantiateViewController(withIdentifier: "initialViewController")
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        delegate.window?.rootViewController = loginViewController
-        PFUser.logOut()
-    }
+//    @IBAction func onLogoutButton(_ sender: Any) {
+//        // Logout and segue to the initial VC
+//        let main = UIStoryboard(name: "Main", bundle: nil)
+//        let loginViewController = main.instantiateViewController(withIdentifier: "initialViewController")
+//        let delegate = UIApplication.shared.delegate as! AppDelegate
+//        delegate.window?.rootViewController = loginViewController
+//        PFUser.logOut()
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectedClassSegue" {
