@@ -18,6 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="X0t-WD-kb5" kind="relationship" relationship="viewControllers" id="oWC-YI-18G"/>
@@ -314,7 +315,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCc-56-7BB">
-                                <rect key="frame" x="40" y="353" width="295" height="50"/>
+                                <rect key="frame" x="40" y="363" width="295" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.86666666670000003" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Sd9-9j-ESd"/>
@@ -330,7 +331,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hW5-r0-VKk" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="20" id="0of-MY-k56"/>
-                            <constraint firstItem="gCc-56-7BB" firstAttribute="top" secondItem="hW5-r0-VKk" secondAttribute="bottom" constant="15" id="B2z-5y-11Y"/>
+                            <constraint firstItem="gCc-56-7BB" firstAttribute="top" secondItem="hW5-r0-VKk" secondAttribute="bottom" constant="25" id="B2z-5y-11Y"/>
                             <constraint firstItem="p96-OD-3x9" firstAttribute="top" secondItem="MCI-6M-2Ey" secondAttribute="bottom" constant="10" id="DI8-SC-3yM"/>
                             <constraint firstItem="ajw-l8-mA6" firstAttribute="top" secondItem="1t5-Ep-u1V" secondAttribute="bottom" constant="10" id="KLo-I0-zEi"/>
                             <constraint firstItem="Pc7-8r-DGs" firstAttribute="top" secondItem="p96-OD-3x9" secondAttribute="bottom" constant="10" id="Mhf-9K-Zcu"/>
@@ -408,7 +409,7 @@
                             <constraint firstItem="IcT-2a-CNW" firstAttribute="trailing" secondItem="h27-se-4zc" secondAttribute="trailing" id="ZNX-gb-vny"/>
                             <constraint firstItem="h27-se-4zc" firstAttribute="trailing" secondItem="wPo-y0-VJe" secondAttribute="trailing" constant="40" id="cSp-hm-oQ3"/>
                             <constraint firstItem="IcT-2a-CNW" firstAttribute="bottom" secondItem="h27-se-4zc" secondAttribute="bottom" id="nPc-cx-U7r"/>
-                            <constraint firstItem="h27-se-4zc" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wPo-y0-VJe" secondAttribute="bottom" constant="20" id="xLL-7j-O6S"/>
+                            <constraint firstItem="h27-se-4zc" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wPo-y0-VJe" secondAttribute="bottom" constant="40" id="xLL-7j-O6S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h27-se-4zc"/>
                     </view>

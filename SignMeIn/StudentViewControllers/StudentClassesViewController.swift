@@ -37,14 +37,14 @@ class StudentClassesViewController: UIViewController {
         loadClasses()
     }
     
-    @IBAction func onLogoutButton(_ sender: Any) {
-        // Log out button that will bring the user back to the initial view
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController = main.instantiateViewController(withIdentifier: "initialViewController")
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        delegate.window?.rootViewController = loginViewController
-        PFUser.logOut()
-    }
+//    @IBAction func onLogoutButton(_ sender: Any) {
+//        // Log out button that will bring the user back to the initial view
+//        let main = UIStoryboard(name: "Main", bundle: nil)
+//        let loginViewController = main.instantiateViewController(withIdentifier: "initialViewController")
+//        let delegate = UIApplication.shared.delegate as! AppDelegate
+//        delegate.window?.rootViewController = loginViewController
+//        PFUser.logOut()
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "studentSelectedClassSegue" {
