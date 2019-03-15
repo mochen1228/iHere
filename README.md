@@ -8,7 +8,7 @@ iHere is an application that will make the process of taking class attendance ea
 
 # README Template
 
-Your [design product spec](https://hackmd.io/s/H1wGpVUh7) (described in that link) will look like the following in your README:
+Link to video demo: https://youtu.be/cHs5D3TvJQE
 
 ## 1. User Stories (Required and Optional)
 
