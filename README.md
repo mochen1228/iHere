@@ -13,30 +13,40 @@ Your [design product spec](https://hackmd.io/s/H1wGpVUh7) (described in that lin
 ## 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
+
 [X] Users are able to sign up with their respective accounts, sign in, sign out, and stay signed in
+
 [X] Instructors will have the ability to create a check in event with a title and a code and view who has checked in
+
 [X] Students will be able to check in entering the title and code
 
 **Optional Nice-to-have Stories**
+
 [ ] Instructors are able to overwrite check in
+
 [X] Students have to check in with their locations
+
 [ ] Users can see who checked in
+
 [ ] Students can check what classes they have checked in 
+
 
 ## 2. Screen Archetypes
 
-Sign in screen
-  user can sign in
-Sign up Screen
-  user can sign up 
-Search 
-  students can look up an event
-select an event
-  check in for event by entering a code / (maybe confirming location)
-Create
-  instructors will specify event details
-create code
-  post event
+**Sign in screen**
+* user can sign in
+* sign up Screen
+* user can sign up 
+  
+**Search**
+* students can look up an event
+* select an event
+* check in for event by entering a code / (maybe confirming location)
+
+**Create**
+* instructors will specify event details
+* create code
+* post event
 
 
 ## 3. Navigation
