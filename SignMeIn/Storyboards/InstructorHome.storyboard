@@ -142,7 +142,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCc-56-7BB">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCc-56-7BB">
                                 <rect key="frame" x="20" y="548" width="335" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.86666666670000003" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -155,7 +155,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Course Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1t5-Ep-u1V" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
-                                <rect key="frame" x="63" y="128" width="249" height="50"/>
+                                <rect key="frame" x="63.000000000000007" y="193" width="105.66666666666669" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="2Tr-3e-acv"/>
                                 </constraints>
@@ -178,7 +178,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Course Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SSy-Ha-NLc" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
-                                <rect key="frame" x="63" y="198" width="249" height="50"/>
+                                <rect key="frame" x="63" y="118" width="249" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bpV-mQ-TfZ"/>
                                 </constraints>
@@ -201,7 +201,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Class Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MCI-6M-2Ey" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
-                                <rect key="frame" x="63" y="268" width="249" height="50"/>
+                                <rect key="frame" x="213.66666666666666" y="193" width="98.333333333333343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="jdv-HT-j2X"/>
                                 </constraints>
@@ -223,8 +223,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Meeting Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ajw-l8-mA6" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
-                                <rect key="frame" x="63" y="338" width="249" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Meeting Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ajw-l8-mA6" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
+                                <rect key="frame" x="63" y="260" width="249" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1n3-bb-qzk"/>
                                 </constraints>
@@ -246,7 +246,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Latttute" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hW5-r0-VKk" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Latttute" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hW5-r0-VKk" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
                                 <rect key="frame" x="63" y="478" width="120" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="4aI-Hb-qrO"/>
@@ -270,7 +270,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Longitute" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pc7-8r-DGs" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Longitute" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pc7-8r-DGs" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
                                 <rect key="frame" x="192" y="478" width="120" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="2Zx-xU-oaa"/>
@@ -294,8 +294,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sign In Code (Default: code)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p96-OD-3x9" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
-                                <rect key="frame" x="63" y="408" width="249" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sign In Code (Default: code)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p96-OD-3x9" customClass="HoshiTextField" customModule="SignMeIn" customModuleProvider="target">
+                                <rect key="frame" x="63" y="318" width="249" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="xHI-sl-mnH"/>
                                 </constraints>
@@ -320,31 +320,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1t5-Ep-u1V" firstAttribute="top" secondItem="KFv-KC-Ocz" secondAttribute="top" constant="40" id="5eM-5B-6BL"/>
-                            <constraint firstItem="hW5-r0-VKk" firstAttribute="top" secondItem="p96-OD-3x9" secondAttribute="bottom" constant="20" id="6eq-F1-Bnv"/>
+                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="SSy-Ha-NLc" secondAttribute="trailing" constant="63" id="1GR-eu-ADt"/>
+                            <constraint firstItem="1t5-Ep-u1V" firstAttribute="top" secondItem="SSy-Ha-NLc" secondAttribute="bottom" constant="25" id="4Oh-II-I5M"/>
                             <constraint firstItem="p96-OD-3x9" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="63" id="8AZ-Wb-Asx"/>
                             <constraint firstItem="hW5-r0-VKk" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="63" id="9gT-GT-ejF"/>
+                            <constraint firstItem="MCI-6M-2Ey" firstAttribute="leading" secondItem="1t5-Ep-u1V" secondAttribute="trailing" constant="45" id="AGz-4f-UTv"/>
                             <constraint firstItem="gCc-56-7BB" firstAttribute="top" secondItem="hW5-r0-VKk" secondAttribute="bottom" constant="20" id="Ap4-Qc-Wlo"/>
-                            <constraint firstItem="ajw-l8-mA6" firstAttribute="top" secondItem="MCI-6M-2Ey" secondAttribute="bottom" constant="20" id="C10-Kd-JOH"/>
                             <constraint firstItem="gCc-56-7BB" firstAttribute="top" secondItem="hW5-r0-VKk" secondAttribute="bottom" constant="20" id="DCa-nE-Fou"/>
                             <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="ajw-l8-mA6" secondAttribute="trailing" constant="63" id="DK0-vT-UBQ"/>
                             <constraint firstItem="SSy-Ha-NLc" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="63" id="EPG-0z-g7P"/>
                             <constraint firstItem="1t5-Ep-u1V" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="63" id="F6r-Kx-M6B"/>
-                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="SSy-Ha-NLc" secondAttribute="trailing" constant="63" id="FWh-sk-qga"/>
-                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="MCI-6M-2Ey" secondAttribute="trailing" constant="63" id="FZJ-aV-f03"/>
                             <constraint firstItem="ajw-l8-mA6" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="63" id="J0M-Z1-5YN"/>
                             <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="gCc-56-7BB" secondAttribute="trailing" constant="125" id="NFH-P2-INo"/>
-                            <constraint firstItem="p96-OD-3x9" firstAttribute="top" secondItem="ajw-l8-mA6" secondAttribute="bottom" constant="20" id="NQY-hQ-o7Y"/>
                             <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="p96-OD-3x9" secondAttribute="trailing" constant="63" id="ORd-Oc-oQu"/>
+                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="MCI-6M-2Ey" secondAttribute="trailing" constant="63" id="PIK-ij-cDH"/>
                             <constraint firstItem="gCc-56-7BB" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="125" id="WiQ-Tz-dyY"/>
-                            <constraint firstItem="MCI-6M-2Ey" firstAttribute="top" secondItem="SSy-Ha-NLc" secondAttribute="bottom" constant="20" id="XoV-ns-r5l"/>
-                            <constraint firstItem="SSy-Ha-NLc" firstAttribute="top" secondItem="1t5-Ep-u1V" secondAttribute="bottom" constant="20" id="cFc-kQ-6pM"/>
-                            <constraint firstItem="Pc7-8r-DGs" firstAttribute="top" secondItem="p96-OD-3x9" secondAttribute="bottom" constant="20" id="hJY-V1-jtO"/>
-                            <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="1t5-Ep-u1V" secondAttribute="trailing" constant="63" id="kR0-9c-uL3"/>
+                            <constraint firstItem="SSy-Ha-NLc" firstAttribute="top" secondItem="KFv-KC-Ocz" secondAttribute="top" constant="30" id="hV6-P0-ZcJ"/>
                             <constraint firstItem="Pc7-8r-DGs" firstAttribute="leading" relation="lessThanOrEqual" secondItem="hW5-r0-VKk" secondAttribute="trailing" priority="250" constant="9" id="lqy-yh-rhg"/>
                             <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="gCc-56-7BB" secondAttribute="trailing" constant="20" id="oBw-xi-R5M"/>
                             <constraint firstItem="gCc-56-7BB" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="20" id="oov-nK-YCB"/>
-                            <constraint firstItem="MCI-6M-2Ey" firstAttribute="leading" secondItem="KFv-KC-Ocz" secondAttribute="leading" constant="63" id="w2d-wx-lYK"/>
+                            <constraint firstItem="MCI-6M-2Ey" firstAttribute="top" secondItem="SSy-Ha-NLc" secondAttribute="bottom" constant="25" id="tni-VK-YbX"/>
                             <constraint firstItem="KFv-KC-Ocz" firstAttribute="trailing" secondItem="Pc7-8r-DGs" secondAttribute="trailing" constant="63" id="yxO-UG-oqP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KFv-KC-Ocz"/>
