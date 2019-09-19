@@ -9,6 +9,7 @@ iHere is an application that will make the process of taking class attendance ea
 # README Template
 
 Link to video demo: https://youtu.be/cHs5D3TvJQE
+Link to presentation: https://drive.google.com/file/d/1Tp2TUdbZ6oHIf4qTNwacwqXHco0p8ldv/view?usp=sharing
 
 ## 1. User Stories (Required and Optional)
 
